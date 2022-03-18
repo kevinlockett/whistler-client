@@ -1,9 +1,10 @@
 import React from "react"
 import { Route, Redirect } from "react-router-dom"
 import { ApplicationViews } from "./ApplicationViews"
-import { NavBar } from "./nav/NavBar"
+import { Nav } from "./nav/Nav"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
+import "./Whistler.css"
 
 export const Whistler = () => (
     <>
@@ -11,7 +12,7 @@ export const Whistler = () => (
             if (localStorage.getItem("whistler_token")) {
                 return <>
                     <Route>
-                        <NavBar />
+                        <Nav />
                         <ApplicationViews />
                     </Route>
                 </>

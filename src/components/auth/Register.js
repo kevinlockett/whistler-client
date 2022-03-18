@@ -44,6 +44,7 @@ export const Register = () => {
                 .then(res => res.json())
                 .then(res => {
                     if ("token" in res) {
+                        localStorage.setItem("whistler_id", res.user_id)
                         localStorage.setItem("whistler_token", res.token)
                         history.push("/")
                     }
@@ -92,10 +93,10 @@ export const Register = () => {
                 }}>
                     <button className="btn btn-1 btn-sep icon-send" type="submit">Register</button>
                 </fieldset>
+                <div className="link--register">
+                    Already registered? <Link to="/login">Login</Link>
+                </div>
             </form>
-            <section className="link--register">
-                Already registered? <Link to="/login">Login</Link>
-            </section>
         </main>
     )
 }

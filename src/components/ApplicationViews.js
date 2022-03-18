@@ -1,14 +1,22 @@
 import React from "react"
-import { Route, Router } from "react-router-dom"
+import { Route } from "react-router-dom"
+import Home from './landingPage/LandingPage'
+import StudentSignUp from './student/StudentSignup'
+import InstructorSignUp from "./instructor/InstructorSignup"
 
 export const ApplicationViews = () => {
 	return (
 		<>
-			<main
-				style={{
-					margin: "5rem 2rem",
-					lineHeight: "1.75rem",
-				}}>
+			<main id="container--ApplicationViews">
+				<Route exact path="/">
+					<Home />
+				</Route>
+				<Route exact path="/signup">
+					<StudentSignUp />
+				</Route>
+				<Route exact path="/apply">
+					<InstructorSignUp />
+				</Route>
 			</main>
 		</>
 	)
