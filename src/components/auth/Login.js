@@ -1,5 +1,6 @@
 import React, { useRef } from "react"
 import { Link, useHistory } from "react-router-dom"
+
 import "./Auth.css"
 
 
@@ -26,6 +27,7 @@ export const Login = () => {
             .then(res => res.json())
             .then(res => {
                 if ("valid" in res && res.valid && "token" in res) {
+                    localStorage.setItem("whistler_id", res.user_id)
                     localStorage.setItem("whistler_token", res.token)
                     history.push("/")
                 }
@@ -39,7 +41,7 @@ export const Login = () => {
         <main className="container--login">
             <dialog className="dialog dialog--auth" ref={invalidDialog}>
                 <div>Username or password was not valid.</div>
-                <button className="button--close" onClick={e => invalidDialog.current.close()}>Close</button>
+                <button className="btn--close" onClick={e => invalidDialog.current.close()}>Close</button>
             </dialog>
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
@@ -56,12 +58,12 @@ export const Login = () => {
                     <fieldset style={{
                         textAlign: "center"
                     }}>
-                        <button className="btn btn-1 btn-sep icon-send" type="submit">Sign In</button>
+                        <button className="btn" type="submit">Sign In</button>
                     </fieldset>
-                </form>
-            </section>
-            <section className="link--register">
-                <Link to="/register">Not a member yet?</Link>
+                    <div className="link--register">
+                        <Link to="/register">Not a member yet?</Link>
+                    </div>
+                </form>    
             </section>
         </main>
     )
