@@ -45,7 +45,8 @@ export const Login = () => {
             </dialog>
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1 className="whistler">Whistler</h1>
+                    <img className="logo__login" src={require('../assets/w_logo2.png')}
+                                alt="Mr. Whistler's Musical Emporium Logo" />
                     <h2>Please sign in</h2>
                     <fieldset>
                         <label htmlFor="inputUsername"> Username </label>

@@ -1,19 +1,11 @@
-.student,
-.student__level {
+.instrument__family {
     background-size: cover;
     background-blend-mode: multiply;
     text-align: center;
 }
 
-.student.bg-light {
+.instrument__family.bg-light {
     background-image: url(../assets/signup-bg-img.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-x: center;
-}
-
-.student__level.bg-light {
-    background-image: url(../assets/level-bg-img.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;

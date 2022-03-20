@@ -131,12 +131,14 @@
     background-image: url(../assets/cta-bg-1.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position-x: center;
 }
 
 .cta.bg-grey {
     background-image: url(../assets/cta-bg-2.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position-x: center;
 }
 
 

@@ -1,5 +1,5 @@
 export const getAppUsers = () => {
-	return fetch(`http://localhost:8000/appusers`, {
+	return fetch(`http://localhost:8000/api/appusers`, {
 		headers: {
 			Authorization: `Token ${localStorage.getItem("whistler_token")}`,
 		},
@@ -7,26 +7,26 @@ export const getAppUsers = () => {
 }
 
 export const getAppUser = (userId) => {
-	return fetch(`http://localhost:8000/appusers/${userId}`, {
+	return fetch(`http://localhost:8000/api/appusers/${userId}`, {
 		headers: {
 			Authorization: `Token ${localStorage.getItem("whistler_token")}`,
 		},
 	}).then((response) => response.json())
 }
 
-export const updateAppUser = (userId) => {
-	return fetch(`http://localhost:8000/appusers/${userId.id}`, {
+export const updateAppUser = (user) => {
+	return fetch(`http://localhost:8000/api/appusers/${user.id}`, {
 		method: "PUT",
 		headers: {
 			Authorization: `Token ${localStorage.getItem("whistler_token")}`,
 			"Content-Type": "application/json",
 		},
-		body: JSON.stringify(userId),
+		body: JSON.stringify(user),
 	})
 }
 
 export const deleteAppUser = (userId) => {
-	return fetch(`http://localhost:8000/appusers/${userId}`, {
+	return fetch(`http://localhost:8000/api/appusers/${userId}`, {
 		method: "DELETE",
 		headers: {
 			Authorization: `Token ${localStorage.getItem("whistler_token")}`,
@@ -35,7 +35,7 @@ export const deleteAppUser = (userId) => {
 }
 
 export const getShops = () => {
-	return fetch(`http://localhost:8000/shops`, {
+	return fetch(`http://localhost:8000/api/shops`, {
 		headers: {
 			Authorization: `Token ${localStorage.getItem("whistler_token")}`,
 		},
@@ -43,7 +43,7 @@ export const getShops = () => {
 }
 
 export const getStates = () => {
-	return fetch(`http://localhost:8000/states`, {
+	return fetch(`http://localhost:8000/api/states`, {
 		headers: {
 			Authorization: `Token ${localStorage.getItem("whistler_token")}`,
 		},

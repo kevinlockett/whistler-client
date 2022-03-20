@@ -1,49 +1,20 @@
-.hero {
-    --gap: 3rem;
-}
-
-.hero img {
-    transform: translateY(2em);
-}
-
-@media (min-width: 40em) {
-    .hero {
-    padding: 0;
-    }
-}
-
-.cta {
+.instructor,
+.instructor__level {
     background-size: cover;
     background-blend-mode: multiply;
     text-align: center;
 }
 
-.cta.bg-light {
-    background-image: url(../assets/bg-img-1.png);
+.instructor.bg-light {
+    background-image: url(../assets/signup-bg-img.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position-x: center;
 }
 
-.testimonials {
-    --gap: 4rem;
-    text-align: center;
+.instructor__level.bg-light {
+    background-image: url(../assets/level-bg-img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
 }
-
-.testimonial {
-    text-align: left;
-    padding: calc(var(--spacer) * 2);
-}
-
-.testimonial > p:first-of-type {
-    font-style: italic;
-}
-
-.testimonial .name {
-    font-weight: var(--fw-700);
-    margin-top: 4rem;
-    color: var(--accent);
-}
-
-/* .testimonial.bg-accent {
-    --accent: var(--clr-neutral-900);
-  } */
