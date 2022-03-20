@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useHistory } from 'react-router-dom'
-import { getAppUser, getStates, updateAppUser } from './StudentManager.js'
+import { getAppUser, getStates, updateAppUser } from './StudentManager'
 import "./Student.css"
 
 function StudentSignUp() {
@@ -22,7 +22,9 @@ function StudentSignUp() {
         bio: "string",
         image: "string",
         role_id: 1,
-        shop_id: 1
+        shop_id: 1,
+        music_style_id: 1,
+        skill_level_id: 1
     })
 
     useEffect(() => {
@@ -52,7 +54,7 @@ function StudentSignUp() {
     return (
         <>
 
-            <section className="cta bg-light">
+            <section className="student bg-light">
                 <div className="container flow-content flow-content--large">
                     <h2 className="section-title">Welcome to Whistler!</h2>
                     <p className="h2">Tell us about you:</p>
@@ -154,11 +156,13 @@ function StudentSignUp() {
                                     bio: "",
                                     image: "",
                                     role_id: 1,
-                                    shop_id: 1
+                                    shop_id: 1,
+                                    music_style_id: 1,
+                                    skill_level_id: 1
                                 }
 
 					            // Send PUT request to your API
-                                updateAppUser(user).then(() => history.push("/"))
+                                updateAppUser(user).then(() => history.push("/studentlevel"))
                             }}>
                             Start Learning
                         </button>

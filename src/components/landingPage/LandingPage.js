@@ -1,5 +1,4 @@
 import React from "react"
-import { Player } from 'video-react';
 import { Link, useHistory } from 'react-router-dom'
 import "../../../node_modules/video-react/dist/video-react.css"
 import "./landingPage.css"
@@ -20,7 +19,7 @@ function Home() {
                     <div className="split a-center">
                         <div className="flow-content flow-content--large">
                             <h1 className="section-title">Start learning to play today</h1>
-                            <p className="h2 page-heading">Self training with books and YouTube disappointing you?  <strong>Learn music the right way.</strong>
+                            <p className="h2 page-heading">Are you looking for one-on-one training in studio or on-line?<br/> <strong>We can get you started!</strong>
                             </p>
                             <p>Lorem ipsum dolor sit <a href="https://www.linkedin.com/in/kevin-lockett">Kevin Lockett's LinkedIn page</a> elit. Donec placerat, ipsum ac auctor ornare, nunc ligula scelerisque eros.</p>
                             <button className='btn'
@@ -40,10 +39,10 @@ function Home() {
             <section className="hiw__items bg-accent">
                 <div className="container flow-content flow-content--large">
                     <h2 className="section-title">How it works</h2>
-                    <p className="h2">We'll help you get started this week!</p>
+                    <p className="h2">You can begin this week!</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat, ipsum ac auctor ornare, nunc ligula scelerisque eros.</p>
                     <Link className='btn-hiw bg-light' to="/signUp">
-                        Sign up for a trial lesson now
+                        Sign up for a free 30-minute lesson
                     </Link>
                     <div className="split">
                         <div className="hiw__item bg-light corner-square">
@@ -74,11 +73,7 @@ function Home() {
                             </Link>
                         </div>
                         <div className="video__item">
-                            <Player
-                                playsInline
-                                poster="/assets/poster.png"
-                                src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-                            />
+                            <embed src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" width="560" height="349>"></embed>
                         </div>
                     </div>
                 </div>
@@ -142,10 +137,6 @@ function Home() {
                                 <h3>Keyboard</h3>
                                 <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit.</p>
                             </li>
-                        </ul>
-                    </div>
-                    <div className="families">
-                        <ul className="split">
                             <li className="flow-content corner-square">
                                 <img className="shadow" src={require('../assets/percussion.png')} alt="man with cards flying in front of him" />
                                 <h3>Percussion</h3>
