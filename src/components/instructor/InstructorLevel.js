@@ -18,12 +18,14 @@ function InstructorLevel() {
         state_id: 43,
         zipcode: "Zip Code",
         phone: "(123) 456-7890",
-        bio: "string",
-        image: "string",
+        bio: "",
+        image: "",
         role_id: 1,
         shop_id: 1,
         music_style_id: 1,
-        skill_level_id: 1
+        skill_level_id: 1,
+        instrument_id: 1,
+        approved: "False"
     })
 
     useEffect(() => {
@@ -56,9 +58,11 @@ function InstructorLevel() {
             role_id: 2,
             shop_id: 1,
             music_style_id: 1,
-            skill_level_id: level
+            skill_level_id: level,
+            instrument_id: 1,
+            approved: "True"
         }
-        updateAppUser(user).then(() => history.push("/"))
+        updateAppUser(user).then(() => history.push("/instructors"))
     }
 
     return (
@@ -71,21 +75,23 @@ function InstructorLevel() {
                     <form className="form--instructor_level">
                         <fieldset>
                             <button
-                                className='btn btn__instructor_level'
-                                type='submit'
-                                onClick={() => {
-                                    setInstructorLevel(1)
-                                }}>
+                            className='btn btn__instructor_level'
+                            type='submit'
+                            onClick={(evt) => {
+                                evt.preventDefault()
+                                setInstructorLevel(1)
+                            }}>
                                 Beginner
                             </button>
                         </fieldset>
                         <fieldset>
                             <button
-                                className='btn btn__instructor_level'
-                                type='submit'
-                                onClick={() => {
-                                    setInstructorLevel(2)
-                                }}>
+                            className='btn btn__instructor_level'
+                            type='submit'
+                            onClick={(evt) => {
+                                evt.preventDefault()
+                                setInstructorLevel(2)
+                            }}>
                                 Intermediate
                             </button>
                         </fieldset>
@@ -93,12 +99,13 @@ function InstructorLevel() {
                             <button
                                 className='btn btn__instructor_level'
                                 type='submit'
-                                onClick={() => {
+                                onClick={(evt) => {
+                                    evt.preventDefault()
                                     setInstructorLevel(3)
                                 }}>
                                 Advanced
                             </button>
-                        </fieldset>
+                    </fieldset>
                     </form>
                 </div> {/*<--/container -->*/}
             </section>

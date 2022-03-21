@@ -24,7 +24,9 @@ function StudentSignUp() {
         role_id: 1,
         shop_id: 1,
         music_style_id: 1,
-        skill_level_id: 1
+        skill_level_id: 1,
+        instrument_id: 1,
+        approved: "True"
     })
 
     useEffect(() => {
@@ -65,7 +67,6 @@ function StudentSignUp() {
                                 <input
                                     type='text'
                                     name='address'
-                                    required
                                     autoFocus
                                     className='form-control'
                                     value={currentAppUser.address}
@@ -158,7 +159,9 @@ function StudentSignUp() {
                                     role_id: 1,
                                     shop_id: 1,
                                     music_style_id: 1,
-                                    skill_level_id: 1
+                                    skill_level_id: 1,
+                                    instrument_id: 1,
+                                    approved: "True"
                                 }
 
 					            // Send PUT request to your API
