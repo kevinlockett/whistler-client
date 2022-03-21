@@ -68,7 +68,7 @@ function InstructorLevel() {
     return (
         <>
 
-            <section className="instructor__level bg-light">
+            <section className="instructor instructor__level bg-light">
                 <div className="container flow-content flow-content--large">
                     <h2 className="section-title">Just a couple more steps ...</h2>
                     <p className="h2">What level students do you prefer to teach?</p>

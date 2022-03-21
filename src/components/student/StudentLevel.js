@@ -62,13 +62,13 @@ function StudentLevel() {
             instrument_id: 1,
             approved: "True"
         }
-        updateAppUser(user).then(() => history.push("/"))
+        updateAppUser(user).then(() => history.push("/instructors"))
     }
 
     return (
         <>
 
-            <section className="student__level bg-light">
+            <section className="student student__level bg-light">
                 <div className="container flow-content flow-content--large">
                     <h2 className="section-title">Just a couple more steps ...</h2>
                     <p className="h2">What level musician are you now?</p>
