@@ -23,7 +23,9 @@ function StudentLevel() {
         role_id: 1,
         shop_id: 1,
         music_style_id: 1,
-        skill_level_id: 1
+        skill_level_id: 1,
+        instrument_id: 1,
+        approved: "True"
     })
 
     useEffect(() => {
@@ -56,7 +58,9 @@ function StudentLevel() {
             role_id: 1,
             shop_id: 1,
             music_style_id: 1,
-            skill_level_id: level
+            skill_level_id: level,
+            instrument_id: 1,
+            approved: "True"
         }
         updateAppUser(user).then(() => history.push("/"))
     }
@@ -73,7 +77,8 @@ function StudentLevel() {
                             <button
                                 className='btn btn__student_level'
                                 type='submit'
-                                onClick={() => {
+                                onClick={(evt) => {
+                                    evt.preventDefault()
                                     setStudentLevel(1)
                                 }}>
                                 Beginner
@@ -83,7 +88,8 @@ function StudentLevel() {
                             <button
                                 className='btn btn__student_level'
                                 type='submit'
-                                onClick={() => {
+                                onClick={(evt) => {
+                                    evt.preventDefault()
                                     setStudentLevel(2)
                                 }}>
                                 Intermediate
@@ -93,7 +99,8 @@ function StudentLevel() {
                             <button
                                 className='btn btn__student_level'
                                 type='submit'
-                                onClick={() => {
+                                onClick={(evt) => {
+                                    evt.preventDefault()
                                     setStudentLevel(3)
                                 }}>
                                 Advanced

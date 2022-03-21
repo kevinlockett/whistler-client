@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link, useHistory } from "react-router-dom"
 import { getInstructors } from './InstructorManager'
 import "./Instructor.css"
 
@@ -14,27 +15,33 @@ function InstructorList() {
 
     return (
         <>
-            {/* <-- Instrument Families --> */ }
-            <section className = "join-now" >
+            <section className = "instructor__list" >
                 <div className="container">
-                    {/*<div className="families">*/}
                     <div className="instructors">
                         <h2>Here are the instructors you might be interested in:</h2>
-                        <ul className="split">
+                        <div >
                             {
                                 instructors.map(instructor => {
-                                    return <section key = {`instructor--${instructor.id}`}>
-                                        <li className="flow-content corner-square"><img src={`http://localhost:8000${instructor.image}`} alt=''/></li>
-                                        <li className="flow-content">
-                                            <h3>{instructor.full_name}</h3>
-                                        </li>
-                                        <li className='flow-content'>
-                                            Commodo risus non cursus risus, metus, velit scelerisque urna, aenean leo diam arcu sed arcu purus sagittis posuere orci ornare lorem risus malesuada nec sit
-                                        </li>
-                                    </section>
+                                    return <div className='instructor__list-item split__instructor' key = {`instructor--${instructor.id}`}>
+                                        <div className="flow-content corner-square split__instructor-item">
+                                            <img src={`http://localhost:8000${instructor.image}`} alt='' />
+                                        </div>
+                                        <div className="split__instructor-item">
+                                            <div className="flow-content instructor__name">
+                                                <Link to={`/details/${instructor.id}`}>
+                                                    <h3>{instructor.full_name}</h3>
+                                                </Link>
+                                            </div>
+                                            <div className='flow-content'>
+                                                <pre className='short-bio' >
+                                                    <p>{instructor.bio}</p>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
                                 })
                             }
-                        </ul>
+                        </div>
                     </div>
                 </div> {/* <--/container --> */}
             </section>

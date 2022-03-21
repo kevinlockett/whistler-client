@@ -6,6 +6,7 @@ import StudentLevel from './student/StudentLevel'
 import InstructorSignUp from "./instructor/InstructorSignup"
 import InstructorLevel from "./instructor/InstructorLevel"
 import InstructorList from "./instructor/InstructorList"
+import InstructorDetails from "./instructor/InstructorDetails"
 
 export const ApplicationViews = () => {
 	return (
@@ -28,6 +29,9 @@ export const ApplicationViews = () => {
 				</Route>
 				<Route exact path="/instructors">
 					<InstructorList />
+				</Route>
+				<Route exact path="/details/:instructorId(\d+)">
+					<InstructorDetails />
 				</Route>
 			</main>
 		</>

@@ -81,7 +81,6 @@ function InstructorSignUp() {
                                     type='text'
                                     name='address'
                                     required
-                                    autoFocus
                                     className='form-control'
                                     value={currentAppUser.address}
                                     onChange={changeAppUserState}
@@ -198,7 +197,9 @@ function InstructorSignUp() {
                                     role_id: 2,
                                     shop_id: 1,
                                     music_style_id: 1,
-                                    skill_level_id: 1
+                                    skill_level_id: 1,
+                                    instrument_id: 1,
+                                    approved: "False"
                                 }
 
 					            // Send PUT request to your API

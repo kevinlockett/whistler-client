@@ -18,3 +18,53 @@
     background-size: cover;
     background-position-x: center;
 }
+
+.instructors img {
+    max-width: 8em;
+    margin-bottom: 1em;
+}
+
+.instructor__list-item {
+    margin: 2em 0;
+}
+
+.instructor__name {
+    padding-bottom: 1em;
+}
+
+@media screen and (min-width: 1024px) {
+    .split__instructor {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-content: stretch;
+        align-items: flex-start;
+    }
+
+    .split__instructor-item:nth-child(2) {
+        padding: 0 0 1em 1em;
+    }
+}
+
+.instructors,
+.instructor__details pre {
+    white-space: pre-wrap;
+}
+
+.short-bio:nth-of-type(n+2) {
+    display: none;
+}
+
+.instructor__details img {
+    margin: 0 auto 2em;
+}
+
+.instructor__details--name {
+    text-align: center;
+}
+
+
+
+
+
