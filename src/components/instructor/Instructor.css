@@ -1,5 +1,4 @@
-.instructor,
-.instructor__level {
+.instructor {
     background-size: cover;
     background-blend-mode: multiply;
     text-align: center;
@@ -15,6 +14,12 @@
 .instructor__level.bg-light {
     background-image: url(../assets/level-bg-img.png);
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+}
+
+.instructor__music-style.bg-light {
+    background-image: url(../assets/style-bg-img.png);
     background-size: cover;
     background-position-x: center;
 }
@@ -47,7 +52,18 @@
     }
 }
 
-.instructors,
+.form--instructor__music-style {
+    display: flex;
+    gap: 2em;
+}
+
+.btn--music-style {
+    border: none;
+    box-shadow: -0 0.25em 1.5em rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.instructors pre,
 .instructor__details pre {
     white-space: pre-wrap;
 }
@@ -63,6 +79,8 @@
 .instructor__details--name {
     text-align: center;
 }
+
+
 
 
 

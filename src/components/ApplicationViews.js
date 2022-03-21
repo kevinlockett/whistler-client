@@ -3,10 +3,12 @@ import { Route } from "react-router-dom"
 import Home from './landingPage/LandingPage'
 import StudentSignUp from './student/StudentSignup'
 import StudentLevel from './student/StudentLevel'
+import StudentMusicStyle from "./student/StudentMusicStyle"
 import InstructorSignUp from "./instructor/InstructorSignup"
 import InstructorLevel from "./instructor/InstructorLevel"
 import InstructorList from "./instructor/InstructorList"
 import InstructorDetails from "./instructor/InstructorDetails"
+import InstructorMusicStyle from "./instructor/InstructorMusicStyle"
 
 export const ApplicationViews = () => {
 	return (
@@ -21,12 +23,18 @@ export const ApplicationViews = () => {
 				<Route exact path="/studentlevel">
 					<StudentLevel />
 				</Route>
+				<Route exact path="/studentstyle">
+					<StudentMusicStyle />
+				</Route>
 				<Route exact path="/apply">
 					<InstructorSignUp />
 				</Route>
 				<Route exact path="/instructorlevel">
 					<InstructorLevel />
 				</Route>
+				<Route exact path="/instructorstyle">
+					<InstructorMusicStyle />
+				</Route>				
 				<Route exact path="/instructors">
 					<InstructorList />
 				</Route>
