@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useHistory } from 'react-router-dom'
-import { getAppUser, updateAppUser } from './InstructorManager'
+import { getAppUser, updateAppUser } from '../user/UserManager'
 import "./Instructor.css"
 
 function InstructorLevel() {

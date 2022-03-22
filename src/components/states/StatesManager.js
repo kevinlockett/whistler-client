@@ -1,5 +1,5 @@
-export const getInstructors = () => {
-	return fetch(`http://localhost:8000/api/appusers?role=2`, {
+export const getStates = () => {
+	return fetch(`http://localhost:8000/api/states`, {
 		headers: {
 			Authorization: `Token ${localStorage.getItem("whistler_token")}`,
 		},

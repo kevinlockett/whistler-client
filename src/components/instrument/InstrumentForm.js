@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react"
 import { useHistory } from 'react-router-dom'
 import { getAppUser, updateAppUser } from '../user/UserManager'
 import { getStates } from '../states/StatesManager'
-import "./Student.css"
+import { getInstruments } from './InstrumentManager'
+import "./Instrument.css"
 
-function StudentSignUp() {
+function InstrumentForm() {
 
     const history = useHistory()
-    const [states, setStates] = useState([])
+    const [instruments, setInstruments] = useState([])
     const [userId, setUserId] = useState()
     const [ currentAppUser, setCurrentAppUser ] = useState({
         username: "string",
@@ -43,8 +44,8 @@ function StudentSignUp() {
     }, [userId])
 
     useEffect(() => {
-		getStates().then((data) => {
-			setStates(data)
+		getInstruments().then((data) => {
+			setInstruments(data)
 		})
     }, [])
 
@@ -64,76 +65,24 @@ function StudentSignUp() {
                     <form className="form--studentSignup">
                         <fieldset>
                             <div className='form-group'>
-                                <label htmlFor="inputAddress"> Address </label>
-                                <input
-                                    type='text'
-                                    name='address'
-                                    autoFocus
-                                    className='form-control'
-                                    value={currentAppUser.address}
-                                    onChange={changeAppUserState}
-                                />
-                            </div>
-                        </fieldset>
-                        <fieldset>
-                            <div className='form-group'>
-                                <label htmlFor="inputCity"> City </label>
-                                <input
-                                    type='text'
-                                    name='city'
-                                    className='form-control'
-                                    value={currentAppUser.city}
-                                    onChange={changeAppUserState}
-                                    required
-                                />
-                            </div>
-                        </fieldset>
-                        <fieldset>
-                            <div className='form-group'>
-                                <label htmlFor='state_id'>State: </label>
+                                <label htmlFor='instrument_id'>Instrument: </label>
                                 <select
                                     className='form-control'
                                     name='state_id'
-                                    value={currentAppUser.state_id}
+                                    value={currentAppUser.instrument_id}
                                     onChange={changeAppUserState}
                                     required >
-                                    <option value='0' label='Select a state:'></option>
-                                    {states.map((state) => {
+                                    <option value='0' label='Select an instrument:'></option>
+                                    {instruments.map((instrument) => {
                                         return (
                                             <option
-                                                value={state.id}
-                                                key={`state.id--${state.id}`}>
-                                                {state.name}
+                                                value={instrument.id}
+                                                key={`instrument.id--${instrument.id}`}>
+                                                {instrument.name}
                                             </option>
                                         )
                                     })}
                                 </select>
-                            </div>
-                        </fieldset>
-                        <fieldset>
-                            <div className='form-group'>
-                                <label htmlFor="inputZipCode"> Zip Code </label>
-                                <input
-                                    type='text'
-                                    name='zipcode'
-                                    className='form-control'
-                                    value={currentAppUser.zipcode}
-                                    onChange={changeAppUserState}
-                                    required
-                                />
-                            </div>
-                        </fieldset>
-                        <fieldset>
-                            <div className='form-group'>
-                                <label htmlFor="inputPhone"> Phone Number </label>
-                                <input
-                                    type='text'
-                                    name='phone'
-                                    className='form-control'
-                                    value={currentAppUser.phone}
-                                    onChange={changeAppUserState}
-                                    required
-                                />
                             </div>
                         </fieldset>
                         <button
@@ -161,7 +110,7 @@ function StudentSignUp() {
                                     shop_id: 1,
                                     music_style_id: 1,
                                     skill_level_id: 1,
-                                    instrument_id: 1,
+                                    instrument_id: parseInt(currentAppUser.instrument_id),
                                     approved: "True"
                                 }
 
@@ -177,4 +126,4 @@ function StudentSignUp() {
     )
 }
 
-export default StudentSignUp
+export default InstrumentForm

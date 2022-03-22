@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom"
-import { getAppUser } from './InstructorManager'
+import { getAppUser } from '../user/UserManager'
 import './Instructor.css'
 
 function InstructorDetails() {

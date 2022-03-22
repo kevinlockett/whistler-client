@@ -9,6 +9,8 @@ import InstructorLevel from "./instructor/InstructorLevel"
 import InstructorList from "./instructor/InstructorList"
 import InstructorDetails from "./instructor/InstructorDetails"
 import InstructorMusicStyle from "./instructor/InstructorMusicStyle"
+import InstrumentFamily from "./instrument/InstrumentFamily"
+import InstrumentForm from "./instrument/InstrumentForm"
 
 export const ApplicationViews = () => {
 	return (
@@ -36,10 +38,16 @@ export const ApplicationViews = () => {
 					<InstructorMusicStyle />
 				</Route>				
 				<Route exact path="/instructors">
-					<InstructorList />
+				<InstructorList />
 				</Route>
 				<Route exact path="/details/:instructorId(\d+)">
-					<InstructorDetails />
+				<InstructorDetails />
+				</Route>
+				<Route exact path="/instrumentfamily">
+					<InstrumentFamily />
+				</Route>
+				<Route exact path="/instrumentform">
+					<InstrumentForm />
 				</Route>
 			</main>
 		</>
