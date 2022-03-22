@@ -69,7 +69,7 @@ function StudentMusicStyle() {
         <>
 
             <section className="student student__music-style bg-light">
-                <div className="container flow-content flow-content--large">
+                <div className="container container--student__music-style flow-content flow-content--large">
                     <h2 className="section-title">Help us match you to the right instructor</h2>
                     <p className="h2">Which music style do you prefer?</p>
                     <form className="form--student__music-style">
@@ -80,7 +80,7 @@ function StudentMusicStyle() {
                                             evt.preventDefault()
                                             setPreferredStyle(1)
                                         }}/>
-                                </button>
+                            </button>
                         </fieldset>
                         <fieldset>
                             <button className='btn--music-style' >
@@ -89,7 +89,7 @@ function StudentMusicStyle() {
                                         evt.preventDefault()
                                         setPreferredStyle(2)
                                     }}/>
-                                </button>
+                            </button>
                         </fieldset>
                         <fieldset>
                             <button className='btn--music-style' >
@@ -98,7 +98,7 @@ function StudentMusicStyle() {
                                         evt.preventDefault()
                                         setPreferredStyle(3)
                                     }}/>
-                                </button>
+                            </button>
                         </fieldset>
                         <fieldset>
                             <button className='btn--music-style' >

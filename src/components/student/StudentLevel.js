@@ -62,7 +62,7 @@ function StudentLevel() {
             instrument_id: 1,
             approved: "True"
         }
-        updateAppUser(user).then(() => history.push("/instructors"))
+        updateAppUser(user).then(() => history.push("/musicfamily"))
     }
 
     return (

@@ -26,6 +26,7 @@
 
 .form--student__music-style {
     display: flex;
+    flex-wrap: wrap;
     gap: 2em;
 }
 
@@ -33,4 +34,8 @@
     border: none;
     box-shadow: -0 0.25em 1.5em rgba(0, 0, 0, 0.15);
     cursor: pointer;
+}
+
+.btn--music-style__img {
+    max-width: 200px;
 }

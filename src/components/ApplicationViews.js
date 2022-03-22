@@ -4,6 +4,7 @@ import Home from './landingPage/LandingPage'
 import StudentSignUp from './student/StudentSignup'
 import StudentLevel from './student/StudentLevel'
 import StudentMusicStyle from "./student/StudentMusicStyle"
+import InstrumentFamily from "./Instrument/InstrumentFamily"
 import InstructorSignUp from "./instructor/InstructorSignup"
 import InstructorLevel from "./instructor/InstructorLevel"
 import InstructorList from "./instructor/InstructorList"
@@ -27,6 +28,9 @@ export const ApplicationViews = () => {
 				</Route>
 				<Route exact path="/studentstyle">
 					<StudentMusicStyle />
+				</Route>
+				<Route exact path="/instrumentfamily">
+					<InstrumentFamily />
 				</Route>
 				<Route exact path="/apply">
 					<InstructorSignUp />
