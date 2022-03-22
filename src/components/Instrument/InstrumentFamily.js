@@ -1,109 +1,65 @@
-import React, { useState, useEffect } from "react"
-import { useHistory } from 'react-router-dom'
-import { getAppUser, updateAppUser } from './InstrumentManager'
+import { Link } from 'react-router-dom'
 import "./Instrument.css"
 
-function InstrumentLevel() {
 
-    const history = useHistory()
-    const [userId, setUserId] = useState()
-    const [ currentAppUser, setCurrentAppUser ] = useState({
-        username: "string",
-        password: "string",
-        first_name: "string",
-        last_name: "string",
-        email: "string",
-        address: "Address",
-        city: "City",
-        state_id: 43,
-        zipcode: "Zip Code",
-        phone: "(123) 456-7890",
-        bio: "",
-        image: "",
-        role_id: 1,
-        shop_id: 1,
-        music_style_id: 1,
-        skill_level_id: 1
-    })
-
-    useEffect(() => {
-        setUserId(parseInt(localStorage.getItem("whistler_id")))
-    }, [])
-
-    useEffect(() => {
-        if (userId) {
-            getAppUser(userId).then((data) => {
-                setCurrentAppUser(data)
-            })
-        }
-    }, [userId])
-
-    const setInstrumentLevel = (level) => {
-        const user = {
-            id: userId,
-            username: currentAppUser.username,
-            password: currentAppUser.password,
-            first_name: currentAppUser.first_name,
-            last_name: currentAppUser.last_name,
-            email: currentAppUser.email,
-            address: currentAppUser.address,
-            city: currentAppUser.city,
-            state_id: parseInt(currentAppUser.state_id),
-            zipcode: currentAppUser.zipcode,
-            phone: currentAppUser.phone,
-            bio: "",
-            image: "",
-            role_id: 1,
-            shop_id: 1,
-            music_style_id: 1,
-            skill_level_id: level
-        }
-        updateAppUser(user).then(() => history.push("/"))
-    }
+function InstrumentFamily() {
 
     return (
         <>
-
-            <section className="instrument__level bg-light">
+            <section className="instrument-family instrument-family__items bg-light">
                 <div className="container flow-content flow-content--large">
-                    <h2 className="section-title">Just a couple more steps ...</h2>
-                    <p className="h2">What level musician are you now?</p>
-                    <form className="form--instrument_level">
-                        <fieldset>
-                            <button
-                                className='btn btn__instrument_level'
-                                type='submit'
-                                onClick={() => {
-                                    setInstrumentLevel(1)
-                                }}>
-                                Beginner
-                            </button>
-                        </fieldset>
-                        <fieldset>
-                            <button
-                                className='btn btn__instrument_level'
-                                type='submit'
-                                onClick={() => {
-                                    setInstrumentLevel(2)
-                                }}>
-                                Intermediate
-                            </button>
-                        </fieldset>
-                        <fieldset>
-                            <button
-                                className='btn btn__instrument_level'
-                                type='submit'
-                                onClick={() => {
-                                    setInstrumentLevel(3)
-                                }}>
-                                Advanced
-                            </button>
-                        </fieldset>
-                    </form>
-                </div> {/*<--/container -->*/}
+                    <h2 className="section-title">Now let's talk about instruments</h2>
+                    <p className="h2">Which instrument family interests you most?</p>
+                    <div className="split">
+                        <div className="instrument-family__item bg-yellow">
+                            <h3 className='box-title'>Brass Family</h3>
+                            <Link className='btn--music-style' to="/">
+                                <img className='btn--music-style__img' src={require('../assets/brass-family.png')} alt='colorful piano' />
+                            </Link>
+                            <p>Commodo risus non cursus risus, metus, velit scelerisque urna, aenean leo diam arcu sed arcu purus sagittis posuere orci ornare lorem risus malesuada nec sit</p>
+                        </div>
+                        <div className="instrument-family__item bg-teal">
+                            <h3 className='box-title'>Guitar Family</h3>
+                            <Link className='btn--music-style' to="/">
+                                <img className='btn--music-style__img' src={require('../assets/guitar-family.png')} alt='colorful banjo' />
+                            </Link>
+                            <p>Commodo risus non cursus risus, metus, velit scelerisque urna, aenean leo diam arcu sed arcu purus sagittis posuere orci ornare lorem risus malesuada nec sit</p>
+                        </div>
+                        <div className="instrument-family__item bg-orange">
+                            <h3 className='box-title'>Keyboard Family</h3>
+                            <Link className='btn--music-style' to="/">
+                                <img className='btn--music-style__img' src={require('../assets/keyboard-family.png')} alt='colorful collection of brass instruments and a keyboard' />
+                            </Link>
+                            <p>Commodo risus non cursus risus, metus, velit scelerisque urna, aenean leo diam arcu sed arcu purus sagittis posuere orci ornare lorem risus malesuada nec sit</p>
+                        </div>
+                    </div>
+                    <div className="split">
+                        <div className="instrument-family__item bg-green">
+                            <h3 className='box-title'>Percussion Family</h3>
+                            <Link className='btn--music-style' to="/">
+                                <img className='btn--music-style__img'src={require('../assets/percussion-family.png')} alt='colorful electric guitar' />
+                            </Link>
+                            <p>Commodo risus non cursus risus, metus, velit scelerisque urna, aenean leo diam arcu sed arcu purus sagittis posuere orci ornare lorem risus malesuada nec sit</p>
+                        </div>
+                        <div className="instrument-family__item bg-red">
+                            <h3 className='box-title'>Bowed Strings Family</h3>
+                            <Link className='btn--music-style' to="/">
+                                <img className='btn--music-style__img' src={require('../assets/string-family.png')} alt='colorful collection of brass instruments and a keyboard' />
+                            </Link>
+                            <p>Commodo risus non cursus risus, metus, velit scelerisque urna, aenean leo diam arcu sed arcu purus sagittis posuere orci ornare lorem risus malesuada nec sit</p>
+                        </div>
+                        <div className="instrument-family__item bg-blue">
+                            <h3 className='box-title'>Woodwind Family</h3>
+                            <Link className='btn--music-style' to="/">
+                                <img className='btn--music-style__img'src={require('../assets/woodwind-family.png')} alt='colorful electric guitar' />
+                            </Link>
+                            <p>Commodo risus non cursus risus, metus, velit scelerisque urna, aenean leo diam arcu sed arcu purus sagittis posuere orci ornare lorem risus malesuada nec sit</p>
+                        </div>
+                    </div>
+                </div>
             </section>
         </>
     )
 }
 
-export default InstrumentLevel
+export default InstrumentFamily
