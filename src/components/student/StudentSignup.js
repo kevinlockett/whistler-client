@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { useHistory } from 'react-router-dom'
-import { getAppUser, getStates, updateAppUser } from './StudentManager'
+import { getAppUser, updateAppUser } from '../user/UserManager'
+import { getStates } from '../states/StatesManager'
 import "./Student.css"
 
 function StudentSignUp() {
@@ -19,8 +20,8 @@ function StudentSignUp() {
         state_id: 43,
         zipcode: "Zip Code",
         phone: "(123) 456-7890",
-        bio: "string",
-        image: "string",
+        bio: "",
+        image: "",
         role_id: 1,
         shop_id: 1,
         music_style_id: 1,

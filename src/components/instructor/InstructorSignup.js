@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { useHistory } from 'react-router-dom'
-import { getAppUser, getStates, updateAppUser } from './InstructorManager.js'
+import { getAppUser, updateAppUser } from '../user/UserManager.js'
+import { getStates } from '../states/StatesManager'
 import "./Instructor.css"
 
 function InstructorSignUp() {

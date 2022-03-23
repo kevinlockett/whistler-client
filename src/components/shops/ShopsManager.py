@@ -1,5 +1,5 @@
-export const getAppUser = (userId) => {
-	return fetch(`http://localhost:8000/api/appusers/${userId}`, {
+export const getShops = () => {
+	return fetch(`http://localhost:8000/api/shops`, {
 		headers: {
 			Authorization: `Token ${localStorage.getItem("whistler_token")}`,
 		},
