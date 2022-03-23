@@ -18,7 +18,7 @@ function InstructorList() {
             <section className = "instructor__list" >
                 <div className="container">
                     <div className="instructors">
-                        <h2>Here are the instructors you might be interested in:</h2>
+                        <h2 className="instructor-list--header">Here are the instructors you might be interested in:</h2>
                         <div >
                             {
                                 instructors.map(instructor => {
@@ -31,11 +31,8 @@ function InstructorList() {
                                                 <Link to={`/details/${instructor.id}`}>
                                                     <h3>{instructor.full_name}</h3>
                                                 </Link>
-                                            </div>
-                                            <div className='flow-content'>
-                                                <pre className='short-bio' >
-                                                    <p>{instructor.bio}</p>
-                                                </pre>
+                                                <p>{instructor.first_name} plays {instructor.instrument.name} prefers {instructor.music_style.style}, and likes to work with  {instructor.skill_level.level} students.</p>
+                                                <p>You can reach {instructor.first_name} at {instructor.phone}.</p>
                                             </div>
                                         </div>
                                     </div>

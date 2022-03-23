@@ -12,6 +12,7 @@ import StudentMusicStyle from './student/StudentMusicStyle'
 import InstructorMusicStyle from './instructor/InstructorMusicStyle'
 import InstructorList from "./instructor/InstructorList"
 import InstructorDetails from "./instructor/InstructorDetails"
+import UserProfile from "./user/UserProfile"
 
 export const ApplicationViews = () => {
 	return (
@@ -48,10 +49,13 @@ export const ApplicationViews = () => {
 					<InstructorMusicStyle />
 				</Route>
 				<Route exact path="/instructors">
-				<InstructorList />
+					<InstructorList />
 				</Route>
 				<Route exact path="/details/:instructorId(\d+)">
-				<InstructorDetails />
+					<InstructorDetails />
+				</Route>
+				<Route exact path="/profile">
+					<UserProfile />
 				</Route>
 			</main>
 		</>

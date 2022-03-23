@@ -67,8 +67,8 @@ export const Nav = () => {
 							</Link>
 						</li>
 						<li className='nav-list__item'>
-							<Link className='nav-list__link' to='/events'>
-								Events
+							<Link className='nav-list__link' to='/profile'>
+								Profile
 							</Link>
 						</li>
 						{localStorage.getItem("whistler_token") !== null ? (
