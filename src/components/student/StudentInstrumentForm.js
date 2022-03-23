@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react"
 import { useHistory, useParams } from 'react-router-dom'
 import { getAppUser, updateAppUser } from '../user/UserManager'
-import { getInstrumentsByFamily } from './InstrumentManager'
-import "./Instrument.css"
+import { getInstrumentsByFamily } from '../instrument/InstrumentManager'
+import "./Student.css"
 
-function InstrumentForm() {
+function StudentInstrumentForm() {
 
     const history = useHistory()
     const { familyId } = useParams()
@@ -22,13 +22,13 @@ function InstrumentForm() {
         zipcode: "Zip Code",
         phone: "(123) 456-7890",
         bio: "string",
-        image: "string",
+        image: "",
         role_id: 1,
         shop_id: 1,
         music_style_id: 1,
         skill_level_id: 1,
         instrument_id: 1,
-        approved: "False"
+        approved: "True"
     })
 
     useEffect(() => {
@@ -77,7 +77,7 @@ function InstrumentForm() {
                                 <select
                                     autoFocus
                                     className='form-control'
-                                    name='state_id'
+                                    name='instrument_id'
                                     onChange={changeAppUserState}
                                     required >
                                     <option value='0' >Select an instrument:</option>
@@ -109,21 +109,21 @@ function InstrumentForm() {
                                     email: currentAppUser.email,
                                     address: currentAppUser.address,
                                     city: currentAppUser.city,
-                                    state_id: parseInt(currentAppUser.state_id),
+                                    state_id: currentAppUser.state_id,
                                     zipcode: currentAppUser.zipcode,
                                     phone: currentAppUser.phone,
                                     bio: currentAppUser.bio,
-                                    image: currentAppUser.image,
-                                    role_id: parseInt(currentAppUser.role_id),
-                                    shop_id: parseInt(currentAppUser.shop_id),
-                                    music_style_id: parseInt(currentAppUser.music_style_id),
-                                    skill_level_id: parseInt(currentAppUser.skill_level_id),
+                                    image: "",
+                                    role_id: currentAppUser.role_id,
+                                    shop_id: 1,
+                                    music_style_id: 1,
+                                    skill_level_id: currentAppUser.skill_level_id,
                                     instrument_id: parseInt(currentAppUser.instrument_id),
                                     approved: currentAppUser.approved
                                 }
 
 					            // Send PUT request to your API
-                                updateAppUser(user).then(() => history.push("/instructorlist"))
+                                updateAppUser(user).then(() => history.push("/studentstyle"))
                             }}>
                             Continue
                         </button>
@@ -134,4 +134,4 @@ function InstrumentForm() {
     )
 }
 
-export default InstrumentForm
+export default StudentInstrumentForm

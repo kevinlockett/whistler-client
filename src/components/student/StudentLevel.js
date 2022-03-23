@@ -50,19 +50,19 @@ function StudentLevel() {
             email: currentAppUser.email,
             address: currentAppUser.address,
             city: currentAppUser.city,
-            state_id: parseInt(currentAppUser.state_id),
+            state_id: currentAppUser.state_id,
             zipcode: currentAppUser.zipcode,
             phone: currentAppUser.phone,
-            bio: "",
+            bio: currentAppUser.bio,
             image: "",
-            role_id: 1,
-            shop_id: 1,
+            role_id: currentAppUser.role_id,
+            shop_id: currentAppUser.shop_id,
             music_style_id: 1,
             skill_level_id: level,
             instrument_id: 1,
-            approved: "True"
+            approved: currentAppUser.approved
         }
-        updateAppUser(user).then(() => history.push("/musicfamily"))
+        updateAppUser(user).then(() => history.push("/family"))
     }
 
     return (

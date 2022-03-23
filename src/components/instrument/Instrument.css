@@ -1,3 +1,9 @@
+.instrument {
+    background-size: cover;
+    background-blend-mode: multiply;
+    text-align: center;
+}
+
 .instrument-family__items {
     --gap: 4rem;
     text-align: center;
@@ -70,4 +76,23 @@
 
 .instrument-family img {
     margin: 0 auto 1em;
+}
+
+.instrument-form.bg-light {
+    background-image: url(../assets/instruments-bg-img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+}
+
+.instrument-form__shadow {
+    min-width: 300px;
+    max-width: 750px;
+    margin: 3em auto 0;
+    border: 5px solid var(--clr-accent-teal);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.instrument-form .section-title {
+    color:var(--clr-neutral-100);
 }

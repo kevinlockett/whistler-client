@@ -55,7 +55,8 @@
 .form--instructor__music-style {
     display: flex;
     flex-wrap: wrap;
-    gap: 2em;
+    justify-content: center;
+    gap: 1em;
 }
 
 .btn--music-style {

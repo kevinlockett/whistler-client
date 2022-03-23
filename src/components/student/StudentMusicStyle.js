@@ -50,19 +50,19 @@ function StudentMusicStyle() {
             email: currentAppUser.email,
             address: currentAppUser.address,
             city: currentAppUser.city,
-            state_id: parseInt(currentAppUser.state_id),
+            state_id: currentAppUser.state_id,
             zipcode: currentAppUser.zipcode,
             phone: currentAppUser.phone,
-            bio: "",
+            bio: currentAppUser.bio,
             image: "",
-            role_id: 1,
+            role_id: currentAppUser.role_id,
             shop_id: 1,
             music_style_id: style,
             skill_level_id: currentAppUser.skill_level_id,
-            instrument_id: 1,
-            approved: "True"
+            instrument_id: currentAppUser.instrument_id,
+            approved: currentAppUser.approved
         }
-        updateAppUser(user).then(() => history.push("/"))
+        updateAppUser(user).then(() => history.push("/instructors"))
     }
 
     return (
