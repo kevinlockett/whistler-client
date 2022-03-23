@@ -39,3 +39,30 @@
 .btn--music-style__img {
     max-width: 200px;
 }
+
+.profile {
+    background-size: cover;
+    background-blend-mode: multiply;
+    text-align: center;
+}
+
+.profile.bg-light {
+    background-image: url(../assets/bg-large.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+}
+
+.img--update {
+    display: flex;
+}
+
+.img--update .profile--img {
+    max-width: 150px;
+}
+
+.profile .btn--delete {
+    color: var(--clr-accent-yellow);
+    background-color: var(--clr-accent-red);
+    margin-right: 2em;
+}
