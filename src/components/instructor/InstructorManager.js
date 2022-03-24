@@ -13,3 +13,11 @@ export const getApprovedInstructors = () => {
 		},
 	}).then((response) => response.json())
 }
+
+export const getApprovedInstructorsByInstrument = (instrumentId) => {
+	return fetch(`http://localhost:8000/api/appusers?approved=1&instrument=${instrumentId}&role=2`, {
+		headers: {
+			Authorization: `Token ${localStorage.getItem("whistler_token")}`,
+		},
+	}).then((response) => response.json())
+}

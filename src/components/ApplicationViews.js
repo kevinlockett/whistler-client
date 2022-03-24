@@ -52,6 +52,9 @@ export const ApplicationViews = () => {
 				<Route exact path="/instructors">
 					<InstructorList />
 				</Route>
+				<Route exact path="/instructors/:instrumentId(\d+)">
+					<InstructorList />
+				</Route>
 				<Route exact path="/details/:instructorId(\d+)">
 					<InstructorDetails />
 				</Route>
