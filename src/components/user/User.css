@@ -64,5 +64,11 @@
 .profile .btn--delete {
     color: var(--clr-accent-yellow);
     background-color: var(--clr-accent-red);
-    margin-right: 2em;
+    margin-left: 2em;
+}
+
+.profile .btn--update_lessons {
+    color: var(--clr-accent-green);
+    background-color: var(--clr-accent-yellow);
+    margin-left: 2em;
 }

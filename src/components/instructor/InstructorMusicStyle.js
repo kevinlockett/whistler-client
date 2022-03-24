@@ -77,10 +77,10 @@ function InstructorMusicStyle() {
                             <button className='btn--music-style' >
                                 <img className='btn--music-style__img' src={require('../assets/classical-piano.png')} alt='colorful piano'
                                     onClick={(evt) => {
-                                            evt.preventDefault()
-                                            setPreferredStyle(1)
-                                        }}/>
-                                </button>
+                                        evt.preventDefault()
+                                        setPreferredStyle(1)
+                                    }}/>
+                            </button>
                         </fieldset>
                         <fieldset>
                             <button className='btn--music-style' >
@@ -89,7 +89,7 @@ function InstructorMusicStyle() {
                                         evt.preventDefault()
                                         setPreferredStyle(2)
                                     }}/>
-                                </button>
+                            </button>
                         </fieldset>
                         <fieldset>
                             <button className='btn--music-style' >
@@ -98,7 +98,7 @@ function InstructorMusicStyle() {
                                         evt.preventDefault()
                                         setPreferredStyle(3)
                                     }}/>
-                                </button>
+                            </button>
                         </fieldset>
                         <fieldset>
                             <button className='btn--music-style' >
@@ -107,7 +107,7 @@ function InstructorMusicStyle() {
                                         evt.preventDefault()
                                         setPreferredStyle(4)
                                     }}/>
-                                </button>
+                            </button>
                         </fieldset>
                     </form>
                 </div> {/*<--/container -->*/}

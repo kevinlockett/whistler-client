@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom"
-import { getInstructors } from './InstructorManager'
+import { getApprovedInstructors } from './InstructorManager'
 import "./Instructor.css"
 
 function InstructorList() {
@@ -8,7 +8,7 @@ function InstructorList() {
     const [instructors, setInstructors] = useState([])
     
     useEffect(() => {
-        getInstructors().then((d) => {
+        getApprovedInstructors().then((d) => {
             setInstructors(d)
         })
     }, [])
