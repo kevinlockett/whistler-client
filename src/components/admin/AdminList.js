@@ -38,9 +38,9 @@ function AdminList() {
 
     const updateInstructors = () => {
         getInstructors().then((d) => {
-            setInstructors(d).then(() => {
-                history.push('/admin')
-            })
+            console.table(d)
+            setInstructors(d)
+            history.push('/admin')
         })
     }
 

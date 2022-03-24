@@ -62,7 +62,7 @@ function StudentMusicStyle() {
             instrument_id: currentAppUser.instrument_id,
             approved: currentAppUser.approved
         }
-        updateAppUser(user).then(() => history.push("/instructors"))
+        updateAppUser(user).then(() => history.push(`/instructors/${currentAppUser.instrument_id}`))
     }
 
     return (

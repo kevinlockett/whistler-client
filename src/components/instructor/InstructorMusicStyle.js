@@ -62,12 +62,11 @@ function InstructorMusicStyle() {
             instrument_id: currentAppUser.instrument_id,
             approved: currentAppUser.approved
         }
-        updateAppUser(user).then(() => history.push("/instructors"))
+        updateAppUser(user).then(() => history.push(`/instructors/${currentAppUser.instrument_id}`))
     }
 
     return (
         <>
-
             <section className="instructor instructor__music-style bg-light">
                 <div className="container flow-content flow-content--large">
                     <h2 className="section-title">Help us match you to the right student</h2>
