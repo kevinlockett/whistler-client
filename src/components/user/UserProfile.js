@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react"
 import { useHistory } from 'react-router-dom'
 import { getAppUser, updateAppUser, deleteAppUser } from '../user/UserManager'
 import { getStates } from '../states/StatesManager'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashCan, faPencil, faMusic } from "@fortawesome/free-solid-svg-icons"
 import "./User.css"
 
 function UserProfile() {
@@ -30,6 +32,10 @@ function UserProfile() {
         instrument_id: 1,
         approved: "True"
     })
+
+    const music = <FontAwesomeIcon icon={faMusic} />
+	const trashCan = <FontAwesomeIcon icon={faTrashCan} />
+	const pencil = <FontAwesomeIcon icon={faPencil} />
 
     useEffect(() => {
         setUserId(parseInt(localStorage.getItem("whistler_id")))
@@ -191,7 +197,7 @@ function UserProfile() {
                         </fieldset>
 
                         {
-                            userRole === 2 ?
+                            userRole === 2 ? (
                                 <>
                                     <fieldset>
                                         <div className='form-group img--update'>
@@ -224,77 +230,73 @@ function UserProfile() {
                                         </div>
                                     </fieldset>
                                     <fieldset className='profile--buttons'>
-                                    <button
-                                        className='btn btn--delete'
-                                        type='submit'
-                                        onClick={(evt) => {
-                                            // Prevent form from being submitted
-                                            evt.preventDefault()
-                                            
-                                            //Remove user Token & ID from localStorage
-                                            localStorage.removeItem("whistler_id")
-                                            localStorage.removeItem("whistler_token")
-                                            
-                                            // Send DELETE request to your API
-                                            deleteAppUser(userId).then(() => history.push('/'))
-                                        }}>
-                                        Delete Account
-                                    </button>
-                                    <button
-                                        className='btn'
-                                        type='submit'
-                                        onClick={(evt) => {
-                                            // Prevent form from being submitted
-                                            evt.preventDefault()
+                                        <button
+                                            className='btn'
+                                            type='submit'
+                                            onClick={(evt) => {
+                                                // Prevent form from being submitted
+                                                evt.preventDefault()
 
-                                            const user = {
-                                                id: userId,
-                                                username: currentAppUser.username,
-                                                password: currentAppUser.password,
-                                                first_name: currentAppUser.first_name,
-                                                last_name: currentAppUser.last_name,
-                                                email: currentAppUser.email,
-                                                address: currentAppUser.address,
-                                                city: currentAppUser.city,
-                                                state_id: parseInt(currentAppUser.state_id),
-                                                zipcode: currentAppUser.zipcode,
-                                                phone: currentAppUser.phone,
-                                                bio: currentAppUser.bio,
-                                                image: currentAppUser.image,
-                                                role_id: currentAppUser.role_id,
-                                                shop_id: currentAppUser.shop_id,
-                                                music_style_id: currentAppUser.music_style_id,
-                                                skill_level_id: currentAppUser.skill_level_id,
-                                                instrument_id: currentAppUser.instrument_id,
-                                                approved: currentAppUser.approved,
-                                            }
+                                                const user = {
+                                                    id: userId,
+                                                    username: currentAppUser.username,
+                                                    password: currentAppUser.password,
+                                                    first_name: currentAppUser.first_name,
+                                                    last_name: currentAppUser.last_name,
+                                                    email: currentAppUser.email,
+                                                    address: currentAppUser.address,
+                                                    city: currentAppUser.city,
+                                                    state_id: parseInt(currentAppUser.state_id),
+                                                    zipcode: currentAppUser.zipcode,
+                                                    phone: currentAppUser.phone,
+                                                    bio: currentAppUser.bio,
+                                                    image: currentAppUser.image,
+                                                    role_id: currentAppUser.role_id,
+                                                    shop_id: currentAppUser.shop_id,
+                                                    music_style_id: currentAppUser.music_style_id,
+                                                    skill_level_id: currentAppUser.skill_level_id,
+                                                    instrument_id: currentAppUser.instrument_id,
+                                                    approved: currentAppUser.approved,
+                                                }
 
-                                            // Send PUT request to your API
-                                            updateAppUser(user).then(() => history.goBack())
-                                        }}>
-                                        Update profile
+                                                // Send PUT request to your API
+                                                updateAppUser(user).then(() => history.goBack())
+                                            }}>
+                                                {pencil} Update profile
                                         </button>
-                                        </fieldset>
+                                        {
+                                            userRole === 1 ? (
+                                                <button
+                                                    className='btn btn--update_lessons'
+                                                    onClick={() => {
+                                                        history.push('/instructorlevel')
+                                                    }}>
+                                                    {music} Update Music Settings
+                                                </button>
+                                            ) : ""
+                                        }
+                                        <button
+                                            className='btn btn--delete'
+                                            type='submit'
+                                            onClick={(evt) => {
+                                                // Prevent form from being submitted
+                                                evt.preventDefault()
+
+                                                // Send DELETE request to your API
+                                                deleteAppUser(userId).then(() => {
+
+                                                    //Remove user Token & ID from localStorage
+                                                    localStorage.removeItem("whistler_id")
+                                                    localStorage.removeItem("whistler_token")
+                                                    history.push('/')
+                                                })
+                                            }}>
+                                            {trashCan} Delete Account
+                                        </button>
+                                    </fieldset>
                                 </>
-
-                            :
+                            ) : (
                                 <>
-                                    <button
-                                        className='btn btn--delete'
-                                        type='submit'
-                                        onClick={(evt) => {
-                                            // Prevent form from being submitted
-                                            evt.preventDefault()
-
-                                            //Remove user Token & ID from localStorage
-                                            localStorage.removeItem("whistler_id")
-                                            localStorage.removeItem("whistler_token")
-                                            
-                                            // Send DELETE request to your API
-                                            deleteAppUser(userId).then(() => history.push('/'))
-                                        }}>
-                                        Delete Account
-                                    </button>
                                     <button
                                         className='btn'
                                         type='submit'
@@ -327,9 +329,33 @@ function UserProfile() {
                                             // Send PUT request to your API
                                             updateAppUser(user).then(() => history.goBack())
                                         }}>
-                                        Update Profile
+                                            {pencil} Update Profile
+                                    </button>
+                                    <button
+                                        className='btn btn--update_lessons'
+                                        onClick={() => {
+                                            history.push('/studentlevel')
+                                        }}>
+                                            {music} Update Music Settings
+                                    </button>    
+                                    <button
+                                        className='btn btn--delete'
+                                        type='submit'
+                                        onClick={(evt) => {
+                                            // Prevent form from being submitted
+                                            evt.preventDefault()
+
+                                            //Remove user Token & ID from localStorage
+                                            localStorage.removeItem("whistler_id")
+                                            localStorage.removeItem("whistler_token")
+                                            
+                                            // Send DELETE request to your API
+                                            deleteAppUser(userId).then(() => history.push('/'))
+                                        }}>
+                                            {trashCan} Delete Account
                                     </button>
                                 </>
+                            )
                         }              
                     </form>
                 </div>

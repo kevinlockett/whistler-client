@@ -14,14 +14,14 @@ export const getAppUser = (userId) => {
 	}).then((response) => response.json())
 }
 
-export const updateAppUser = (userId) => {
-	return fetch(`http://localhost:8000/api/appusers/${userId.id}`, {
+export const updateAppUser = (user) => {
+	return fetch(`http://localhost:8000/api/appusers/${user.id}`, {
 		method: "PUT",
 		headers: {
 			Authorization: `Token ${localStorage.getItem("whistler_token")}`,
 			"Content-Type": "application/json",
 		},
-		body: JSON.stringify(userId),
+		body: JSON.stringify(user),
 	})
 }
 

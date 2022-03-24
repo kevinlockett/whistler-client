@@ -13,6 +13,7 @@ import InstructorMusicStyle from './instructor/InstructorMusicStyle'
 import InstructorList from "./instructor/InstructorList"
 import InstructorDetails from "./instructor/InstructorDetails"
 import UserProfile from "./user/UserProfile"
+import AdminList from "./admin/AdminList"
 
 export const ApplicationViews = () => {
 	return (
@@ -56,6 +57,9 @@ export const ApplicationViews = () => {
 				</Route>
 				<Route exact path="/profile">
 					<UserProfile />
+				</Route>
+				<Route exact path="/admin">
+					<AdminList />
 				</Route>
 			</main>
 		</>

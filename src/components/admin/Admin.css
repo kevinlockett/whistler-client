@@ -1,0 +1,68 @@
+.admin-list__header {
+    margin-bottom: 1em;
+}
+
+.admin-list__instructors img {
+    max-width: 8em;
+    border: 3px solid var(--clr-accent-teal);
+
+}
+
+.btn__admin {
+    font-size: 1em;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;    
+}
+
+.btn__admin--star--green {
+    color: var(--clr-accent-green);    
+}
+
+.btn__admin--star--yellow {
+    color: var(--clr-accent-yellow);    
+}
+
+.btn__admin--pencil {
+    color: var(--clr-accent-teal);
+}
+
+.btn__admin--trashcan {
+    color: var(--clr-accent-red);
+}
+
+@media screen and (min-width: 1024px) {
+    .split__admin-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-content: stretch;
+        align-items: flex-start;
+    }
+
+.split__admin-list-item:nth-child(2) {
+        padding: 0 0 1em 1em;
+    }
+}
+
+.admin-list__icon-buttons {
+    padding-top: 2em;
+}
+
+.admin-list ul {
+    list-style-type: none;
+}
+
+.split__admin-list-item {
+    display: flex;
+}
+
+.admin-list__list-item {
+    background-color: rgba(253, 194, 48, .2);
+    margin-bottom: 2em;;
+}
+
+.admin-list__user-details {
+    padding: 2em 2em 0 1em;
+}

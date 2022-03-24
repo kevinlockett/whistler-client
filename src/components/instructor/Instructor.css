@@ -74,10 +74,6 @@
     white-space: pre-wrap;
 }
 
-.short-bio:nth-of-type(n+2) {
-    display: none;
-}
-
 .instructor__details img {
     margin: 0 auto 2em;
 }
