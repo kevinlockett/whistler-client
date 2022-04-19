@@ -61,7 +61,7 @@
 
 .btn--music-style {
     border: none;
-    box-shadow: -0 0.25em 1.5em rgba(0, 0, 0, 0.15);
+    box-shadow: var(--bs);
     cursor: pointer;
 }
 

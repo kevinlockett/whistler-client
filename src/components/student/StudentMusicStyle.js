@@ -75,7 +75,7 @@ function StudentMusicStyle() {
                     <form className="form--student__music-style">
                         <fieldset>
                             <button className='btn--music-style' >
-                                <img className='btn--music-style__img' src={require('../assets/classical-piano.png')} alt='colorful piano'
+                                <img className='btn--music-style__img' src={require('../assets/classical-piano.png')} alt="watercolor of colorful piano with music staff, butterflies, notes, and label that says 'Classical'"
                                     onClick={(evt) => {
                                             evt.preventDefault()
                                             setPreferredStyle(1)
@@ -84,7 +84,7 @@ function StudentMusicStyle() {
                         </fieldset>
                         <fieldset>
                             <button className='btn--music-style' >
-                                <img className='btn--music-style__img' src={require('../assets/country-banjo.png')} alt='colorful banjo'
+                                <img className='btn--music-style__img' src={require('../assets/country-banjo.png')} alt="watercolor of fanciful banjo with notes and butterflies from from it with a label reading 'Country'"
                                     onClick={(evt) => {
                                         evt.preventDefault()
                                         setPreferredStyle(2)
@@ -93,7 +93,7 @@ function StudentMusicStyle() {
                         </fieldset>
                         <fieldset>
                             <button className='btn--music-style' >
-                                <img className='btn--music-style__img' src={require('../assets/jazz-instruments.png')} alt='colorful collection of brass instruments and a keyboard'
+                                <img className='btn--music-style__img' src={require('../assets/jazz-instruments.png')} alt="watercolor of colorful collection of brass instruments and a keyboard with notes and hummingbirds flowing out of them, with a label reading, 'Jazz'"
                                     onClick={(evt) => {
                                         evt.preventDefault()
                                         setPreferredStyle(3)
@@ -102,7 +102,7 @@ function StudentMusicStyle() {
                         </fieldset>
                         <fieldset>
                             <button className='btn--music-style' >
-                                <img className='btn--music-style__img'src={require('../assets/rock-guitar.png')} alt='colorful electric guitar'
+                                <img className='btn--music-style__img'src={require('../assets/rock-guitar.png')} alt="colorful watercolor of an electric guitar with paint splatters, butterflies, and music notes exploding around it with a label reading, 'ROCK'"
                                     onClick={(evt) => {
                                         evt.preventDefault()
                                         setPreferredStyle(4)

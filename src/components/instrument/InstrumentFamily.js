@@ -56,10 +56,10 @@ function InstrumentFamily() {
                             <h3 className='box-title'>Brass Family</h3>
                             {
                                 userRole === 1 ? <Link className='btn--music-style' to="/studentinstruments/2">
-                                    <img className='btn--music-style__img' src={require('../assets/brass-family.png')} alt='brass instruments' />
+                                    <img className='btn--music-style__img' src={require('../assets/brass-family.png')} alt='three musicians playing trumpets' />
                                 </Link>
                                     : <Link className='btn--music-style' to="/instructorinstruments/2">
-                                    <img className='btn--music-style__img' src={require('../assets/brass-family.png')} alt='brass instruments' />
+                                    <img className='btn--music-style__img' src={require('../assets/brass-family.png')} alt='three brass instruments' />
                                 </Link>
                             }
                             <p>Commodo risus non cursus risus, metus, velit scelerisque urna, aenean leo diam arcu sed arcu purus sagittis posuere orci ornare lorem risus malesuada nec sit</p>
@@ -68,10 +68,10 @@ function InstrumentFamily() {
                             <h3 className='box-title'>Guitar Family</h3>
                             {
                                 userRole === 1 ? <Link className='btn--music-style' to="/studentinstruments/3">
-                                    <img className='btn--music-style__img' src={require('../assets/guitar-family.png')} alt='guitar, mandolin, and banjo' />
+                                    <img className='btn--music-style__img' src={require('../assets/guitar-family.png')} alt='guitars hanging on dis-play in a music shop' />
                                 </Link>
                                     : <Link className='btn--music-style' to="/instructorinstruments/3">
-                                    <img className='btn--music-style__img' src={require('../assets/guitar-family.png')} alt='guitar, mandolin, and banjo' />
+                                    <img className='btn--music-style__img' src={require('../assets/guitar-family.png')} alt='guitar, mandola, banjo, and mandolin' />
                                 </Link>
                             }
                             <p>Commodo risus non cursus risus, metus, velit scelerisque urna, aenean leo diam arcu sed arcu purus sagittis posuere orci ornare lorem risus malesuada nec sit</p>
@@ -80,7 +80,7 @@ function InstrumentFamily() {
                             <h3 className='box-title'>Keyboard Family</h3>
                             {
                                 userRole === 1 ? <Link className='btn--music-style' to="/studentinstruments/4">
-                                    <img className='btn--music-style__img' src={require('../assets/keyboard-family.png')} alt='piano keyboard' />
+                                    <img className='btn--music-style__img' src={require('../assets/keyboard-family.png')} alt='fingers playing a chord on a piano' />
                                 </Link>
                                     : <Link className='btn--music-style' to="/instructorinstruments/4">
                                     <img className='btn--music-style__img' src={require('../assets/keyboard-family.png')} alt='piano keyboard' />
@@ -106,7 +106,7 @@ function InstrumentFamily() {
                             <h3 className='box-title'>Bowed Strings Family</h3>
                             {
                                 userRole === 1 ? <Link className='btn--music-style' to="/studentinstruments/1">
-                                    <img className='btn--music-style__img' src={require('../assets/string-family.png')} alt='violin, viola, cello, and bass' />
+                                    <img className='btn--music-style__img' src={require('../assets/string-family.png')} alt='bow across the strings of a violin' />
                                 </Link>
                                     : <Link className='btn--music-style' to="/instructorinstruments/1">
                                     <img className='btn--music-style__img' src={require('../assets/string-family.png')} alt='violin, viola, cello, and bass' />
@@ -118,10 +118,10 @@ function InstrumentFamily() {
                             <h3 className='box-title'>Woodwind Family</h3>
                             {
                                 userRole === 1 ? <Link className='btn--music-style' to="/studentinstruments/6">
-                                    <img className='btn--music-style__img' src={require('../assets/woodwind-family.png')} alt='several clarinets' />
+                                    <img className='btn--music-style__img' src={require('../assets/woodwind-family.png')} alt='closeup of clarinet keys' />
                                 </Link>
                                     : <Link className='btn--music-style' to="/instructorinstruments/6">
-                                    <img className='btn--music-style__img' src={require('../assets/woodwind-family.png')} alt='several clarinets' />
+                                    <img className='btn--music-style__img' src={require('../assets/woodwind-family.png')} alt='3 clarinets, bassoon, flute, and recorder' />
                                 </Link>
                             }
                             <p>Commodo risus non cursus risus, metus, velit scelerisque urna, aenean leo diam arcu sed arcu purus sagittis posuere orci ornare lorem risus malesuada nec sit</p>
