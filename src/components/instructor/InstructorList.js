@@ -64,7 +64,7 @@ function InstructorList() {
                                                 <Link to={`/details/${instructor_by_id.id}`}>
                                                     <h3>{instructor_by_id.full_name}</h3>
                                                 </Link>
-                                                <p>{instructor_by_id.first_name} plays {instructor_by_id.instrument.name} prefers {instructor_by_id.music_style.style}, and likes to work with  {instructor_by_id.skill_level.level} students.</p>
+                                                <p>{instructor_by_id.first_name} plays {instructor_by_id.instrument.name}, prefers {instructor_by_id.music_style.style}, and likes to work with  {instructor_by_id.skill_level.level} students.</p>
                                                 <p>You can reach {instructor_by_id.first_name} at {instructor_by_id.phone}.</p>
                                             </div>
                                         </div>
@@ -87,7 +87,7 @@ function InstructorList() {
                                                 <Link to={`/details/${instructor.id}`}>
                                                     <h3>{instructor.full_name}</h3>
                                                 </Link>
-                                                <p>{instructor.first_name} plays {instructor.instrument.name} prefers {instructor.music_style.style}, and likes to work with  {instructor.skill_level.level} students.</p>
+                                                <p>{instructor.first_name} plays {instructor.instrument.name}, prefers {instructor.music_style.style}, and likes to work with  {instructor.skill_level.level} students.</p>
                                                 <p>You can reach {instructor.first_name} at {instructor.phone}.</p>
                                             </div>
                                         </div>

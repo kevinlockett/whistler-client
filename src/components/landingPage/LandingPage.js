@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link, useHistory } from 'react-router-dom'
 import "../../../node_modules/video-react/dist/video-react.css"
 import "./landingPage.css"
@@ -10,6 +10,8 @@ function Home() {
     const handleClick = () => {
         history.push("/Login")
     }
+
+    const [youtubeID] = useState('K9EbCgZAuGs')
 
     return (
         <>
@@ -29,7 +31,7 @@ function Home() {
                         </div>
                         <div>
                             <img className="shadow" src={require('../assets/hero.png')}
-                                alt="man with a deck of cards floating between his hands, which are in front of his concealed face" />
+                                alt="smiling man wearing headphones, arms crossed across a guitar, holding a cup of coffee in his left hand" />
                         </div>
                     </div>
                 </div> {/*<--/container -->*/}
@@ -72,15 +74,32 @@ function Home() {
                                 Sign up today
                             </Link>
                         </div>
-                        <div className="video__item">
-                            <embed src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" width="560" height="349>"></embed>
+                        <div className="video__item video_wrapper">
+                            <iframe
+                                className='video'
+                                title="YouTube video player"
+                                sandbox='allow-same-origin
+                                allow-forms
+                                allow-popups
+                                allow-scripts
+                                allow-presentation'
+                                src={`https://www.youtube.com/embed/${youtubeID}?controls=0`}
+                                frameBorder="0"
+                                allow="accelerometer;
+                                autoplay;
+                                clipboard-write;
+                                encrypted-media;
+                                gyroscope;
+                                picture-in-picture"
+                                allowFullScreen>
+                            </iframe>
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* <-- Styles --> */}
-            <section className="bg-dark">
+            <section className="styles__items bg-dark">
                 <div className="container styles">
                     <div>
                         <h1 className="section-title">The very best</h1>
@@ -92,22 +111,22 @@ function Home() {
                         <p>All your favorite styles</p>
                         <ul className="split">
                             <li className="flow-content">
-                                <img src={require('../assets/classical.png')} alt="dice falling into a hand" />
+                                <img src={require('../assets/classical.png')} alt="young girl playing a violin" />
                                 <h3>Classical</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                             </li>
                             <li className="flow-content">
-                                <img src={require('../assets/country.png')} alt="cards spread on a table" />
+                                <img src={require('../assets/country.png')} alt="bluegrass band playing banjo, stand up bass, and guitar" />
                                 <h3>Country</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                             </li>
                             <li className="flow-content">
-                                <img src={require('../assets/jazz.png')} alt="man riffling cards" />
+                                <img src={require('../assets/jazz.png')} alt="man playing trumpet" />
                                 <h3>Jazz</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                             </li>
                             <li className="flow-content">
-                                <img src={require('../assets/rock.png')} alt="teenager doing cardestry" />
+                                <img src={require('../assets/rock.png')} alt="rock band playing several instruments" />
                                 <h3>Rock</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                             </li>
@@ -117,38 +136,38 @@ function Home() {
             </section>
 
             {/* <-- Instrument Families --> */}
-            <section className="join-now">
+            <section className="families__items join-now">
                 <div className="container">
                     <div className="families">
                         <h2>We teach all instrument families</h2>
                         <ul className="split">
                             <li className="flow-content corner-square">
-                                <img className="shadow" src={require('../assets/brass.png')} alt="man with cards flying in front of him" />
+                                <img className="shadow" src={require('../assets/brass.png')} alt="watercolor of colorful trumpet with butterflies, notes and related images exploding upward, and colors dripping down the page" />
                                 <h3>Brass</h3>
                                 <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit.</p>
                             </li>
                             <li className="flow-content corner-square">
-                                <img className="shadow" src={require('../assets/guitar.png')} alt="woman and man    talking over video conference" />
+                                <img className="shadow" src={require('../assets/guitar.png')} alt="watercolor of colorful acoustic guitar with butterflies, notes and related images exploding out of it" />
                                 <h3>Guitar Family</h3>
                                 <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit.</p>
                             </li>
                             <li className="flow-content corner-square">
-                                <img className="shadow" src={require('../assets/keyboard.png')} alt="man in front of  laptop with earphonese on" />
+                                <img className="shadow" src={require('../assets/keyboard.png')} alt="watercolor of colorful piano keyboard with butterflies, notes and related images exploding upward" />
                                 <h3>Keyboard</h3>
                                 <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit.</p>
                             </li>
                             <li className="flow-content corner-square">
-                                <img className="shadow" src={require('../assets/percussion.png')} alt="man with cards flying in front of him" />
+                                <img className="shadow" src={require('../assets/percussion.png')} alt="watercolor of colorful drum with hummingbirds, notes and related images exploding upward" />
                                 <h3>Percussion</h3>
                                 <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit.</p>
                             </li>
                             <li className="flow-content corner-square">
-                                <img className="shadow" src={require('../assets/strings.png')} alt="woman and man    talking over video conference" />
+                                <img className="shadow" src={require('../assets/strings.png')} alt="watercolor of colorful stand up bass with giraffe head on top and butterflies, notes and related images exploding outward" />
                                 <h3>Strings</h3>
                                 <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit.</p>
                             </li>
                             <li className="flow-content corner-square">
-                                <img className="shadow" src={require('../assets/woodwind.png')} alt="man in front of  laptop with earphonese on" />
+                                <img className="shadow" src={require('../assets/woodwind.png')} alt="watercolor of colorful saxophone with music staff scrolling across, and butterflies, notes and related images exploding downward" />
                                 <h3>Woodwind</h3>
                                 <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit.</p>
                             </li>
@@ -196,7 +215,7 @@ function Home() {
             </section>
 
             {/* <-- Instructors --> */}
-            <section className="cta bg-grey">
+            <section className="instructors bg-grey">
                 <div className="container flow-content flow-content--large">
                     <h2 className="section-title">Invest in future musicians</h2>
                     <p className="h2">Are you a music teacher or musician looking to pass on your knowledge and skills?</p>

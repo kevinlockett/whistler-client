@@ -36,7 +36,7 @@
 }
 
 .hiw .name {
-    font-weight: var(--fw-700);
+    font-weight: var(--fw-bold);
     margin-top: 4rem;
     color: var(--accent);
 }
@@ -69,7 +69,6 @@
 .video__item {
     text-align: left;
     padding: calc(var(--spacer) * 2);
-    border-radius: 10%;
 }
 
 .video__item .h2 {
@@ -80,18 +79,17 @@
     padding-bottom: calc(var(--spacer) * 2);
 }
 
-.video > p:first-of-type {
-    font-style: italic;
-}
-
-.video .name {
-    font-weight: var(--fw-700);
-    margin-top: 4rem;
-    color: var(--accent);
-}
-
-.video .bg-accent {
+.video_wrapper {
     --accent: var(--clr-neutral-900);
+    position: relative;
+}
+
+.video {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .btn-video {
@@ -111,12 +109,14 @@
 /* <-- Styles  --> */
 
 .styles .section-title {
-    margin: calc(var(--spacer) * 2) 0;
+    margin: calc(var(--spacer) * 2) 0; 
 }
 
 .styles p {
     margin: calc(var(--spacer) * 2) 0;
 }
+
+/* <-- Instrument Families --> */
 
 
 /* <-- Call to Action --> */
@@ -133,14 +133,6 @@
     background-size: cover;
     background-position-x: center;
 }
-
-.cta.bg-grey {
-    background-image: url(../assets/cta-bg-2.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-x: center;
-}
-
 
 /* <-- Testimonials --> */
 
@@ -159,7 +151,7 @@
 }
 
 .testimonial .name {
-    font-weight: var(--fw-700);
+    font-weight: var(--fw-bold);
     margin-top: 4rem;
     color: var(--accent);
 }
@@ -167,5 +159,15 @@
 .testimonial.bg-accent {
     --accent: var(--clr-neutral-900);
 }
+
+/* <-- Instructors --> */
+
+.instructors.bg-grey {
+    background-image: url(../assets/cta-bg-2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+}
+
 
 

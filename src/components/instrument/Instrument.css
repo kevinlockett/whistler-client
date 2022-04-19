@@ -47,7 +47,7 @@
 }
 
 .instrument-family .name {
-    font-weight: var(--fw-700);
+    font-weight: var(--fw-bold);
     margin-top: 4rem;
     color: var(--accent);
 }
@@ -90,7 +90,7 @@
     max-width: 750px;
     margin: 3em auto 0;
     border: 5px solid var(--clr-accent-teal);
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    box-shadow: var(--bs-alt)
 }
 
 .instrument-form .section-title {
