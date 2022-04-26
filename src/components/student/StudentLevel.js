@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { getAppUser, updateAppUser } from '../user/UserManager'
 import "./Student.css"
 
-function StudentLevel() {
+export default function StudentLevel() {
 
     const history = useHistory()
     const [userId, setUserId] = useState()
@@ -112,5 +112,3 @@ function StudentLevel() {
         </>
     )
 }
-
-export default StudentLevel

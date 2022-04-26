@@ -4,7 +4,7 @@ import { getAppUser, updateAppUser } from '../user/UserManager'
 import { getStates } from '../states/StatesManager'
 import "./Student.css"
 
-function StudentSignUp() {
+export default function StudentSignUp() {
 
     const history = useHistory()
     const [states, setStates] = useState([])
@@ -176,5 +176,3 @@ function StudentSignUp() {
         </>
     )
 }
-
-export default StudentSignUp

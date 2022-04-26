@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashCan, faPencil, faMusic } from "@fortawesome/free-solid-svg-icons"
 import "./User.css"
 
-function UserProfile() {
+export default function UserProfile() {
 
     const history = useHistory()
     const [states, setStates] = useState([])
@@ -363,5 +363,3 @@ function UserProfile() {
         </>
     )
 }
-
-export default UserProfile

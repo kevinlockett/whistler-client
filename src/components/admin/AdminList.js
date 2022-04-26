@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashCan, faStar } from "@fortawesome/free-solid-svg-icons"
 import "./Admin.css"
 
-function AdminList() {
+export default function AdminList() {
     
     const history = useHistory()
     const [instructors, setInstructors] = useState([])
@@ -260,5 +260,3 @@ function AdminList() {
         </>
     )
 }
-
-export default AdminList

@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import { getAppUser } from '../user/UserManager'
 import './Instructor.css'
 
-function InstructorDetails() {
+export default function InstructorDetails() {
 
     const [instructor, setInstructor] = useState({})
     const { instructorId } = useParams()
@@ -36,5 +36,3 @@ function InstructorDetails() {
         </>
     )
 }
-
-export default InstructorDetails

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { getAppUser } from '../user/UserManager'
 import "./Instrument.css"
 
-function InstrumentFamily() {
+export default function InstrumentFamily() {
 
     const [userId, setUserId] = useState()
     const [userRole, setRole] = useState()
@@ -132,5 +132,3 @@ function InstrumentFamily() {
         </>
     )
 }
-
-export default InstrumentFamily
