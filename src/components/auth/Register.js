@@ -2,7 +2,7 @@ import React, { useRef } from "react"
 import { Link, useHistory } from "react-router-dom"
 import "./Auth.css"
 
-export const Register = () => {
+export default function Register() {
     const firstName = useRef()
     const lastName = useRef()
     const username = useRef()

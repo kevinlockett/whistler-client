@@ -4,7 +4,7 @@ import { Link, useHistory } from "react-router-dom"
 import "./Auth.css"
 
 
-export const Login = () => {
+export default function Login() {
     const username = useRef()
     const password = useRef()
     const invalidDialog = useRef()

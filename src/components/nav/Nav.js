@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { getAppUser } from "../user/UserManager"
 import "./Nav.css"
 
-export const Nav = () => {
+export default function Nav() {
 	const [userId, setUserId] = useState()
 	const [userRole, setRole] = useState()
 	
@@ -103,7 +103,8 @@ export const Nav = () => {
 								</Link>
 							</li>
 						</>
-					)}{" "}
+					)
+					}
 					</ul>
 			</nav>
 		</header>

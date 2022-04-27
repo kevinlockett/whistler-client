@@ -1,14 +1,34 @@
 import React, { useState } from "react"
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import "../../../node_modules/video-react/dist/video-react.css"
 import "./landingPage.css"
 
-function Home() {
+export default function Home() {
 
     const history = useHistory()
     
     const handleClick = () => {
-        history.push("/Login")
+        if (localStorage.getItem("whistler_token")) {
+            history.push('/')
+        } else {
+            history.push("/Login")
+        }
+    }
+
+    const handleSignUp = () => {
+        if (localStorage.getItem("whistler_token")) {
+            history.push('/signUp')
+        } else {
+            history.push("/Login")
+        }
+    }
+
+    const handleApply = () => {
+        if (localStorage.getItem("whistler_token")) {
+            history.push('/apply')
+        } else {
+            history.push("/Login")
+        }
     }
 
     const [youtubeID] = useState('K9EbCgZAuGs')
@@ -43,9 +63,13 @@ function Home() {
                     <h2 className="section-title">How it works</h2>
                     <p className="h2">You can begin this week!</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat, ipsum ac auctor ornare, nunc ligula scelerisque eros.</p>
-                    <Link className='btn-hiw bg-light' to="/signUp">
+                    <button
+                        className='btn-hiw bg-light'
+                        onClick={() => {
+                            handleSignUp()
+                        }} >
                         Sign up for a free 30-minute lesson
-                    </Link>
+                    </button>
                     <div className="split">
                         <div className="hiw__item bg-light corner-square">
                             <h3 className='box-title'>Choose from the best instructors in our area!</h3>
@@ -70,29 +94,22 @@ function Home() {
                         <div className="video__item bg-light">
                             <p className="h2">We'll help you get started this week!</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat, ipsum ac auctor ornare, nunc ligula scelerisque eros.</p>
-                            <Link className='btn bg-light' to="/signUp">
+                            <button
+                                className='btn bg-light'
+                                onClick={() => {
+                                    handleSignUp()
+                                }} >
                                 Sign up today
-                            </Link>
+                            </button>
                         </div>
-                        <div className="video__item video_wrapper">
+                        <div id='player' className="video__item video_wrapper">                            
                             <iframe
-                                className='video'
-                                title="YouTube video player"
-                                sandbox='allow-same-origin
-                                allow-forms
-                                allow-popups
-                                allow-scripts
-                                allow-presentation'
                                 src={`https://www.youtube.com/embed/${youtubeID}?controls=0`}
                                 frameBorder="0"
-                                allow="accelerometer;
-                                autoplay;
-                                clipboard-write;
-                                encrypted-media;
-                                gyroscope;
-                                picture-in-picture"
-                                allowFullScreen>
-                            </iframe>
+                                allow="encrypted-media"
+                                allowFullScreen
+                                title="music lesson video"
+                            />{" "}
                         </div>
                     </div>
                 </div>
@@ -180,11 +197,15 @@ function Home() {
             <section className="bg-accent cta">
                 <div className="container flow-content flow-content--large">
                     <h2 className="section-title">Start learning music today</h2>
-                    <p className="h2">You’re only one step away</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat, ipsum ac auctor ornare.</p>
-                    <Link className='btn' to="/signUp">
-                        Get started now
-                    </Link>
+                    <p className="h2 cta">You’re only one step away</p>
+                    <p className='cta'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat, ipsum ac auctor ornare.</p>
+                    <button
+                        className='btn'
+                        onClick={() => {
+                            handleSignUp()
+                        }} >
+                        Sign up today
+                    </button>
                 </div> {/*<--/container -->*/}
             </section>
 
@@ -221,13 +242,15 @@ function Home() {
                     <p className="h2">Are you a music teacher or musician looking to pass on your knowledge and skills?</p>
                     <p>Stop looking and get started today!</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <Link className='btn' to="/apply">
+                    <button
+                        className='btn'
+                        onClick={() => {
+                            handleApply()
+                        }} >
                         Apply now!
-                    </Link>
+                    </button>
                 </div> {/*<--/container -->*/}
             </section>
         </>
     )
 }
-
-export default Home

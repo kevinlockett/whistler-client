@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { getAppUser, updateAppUser } from '../user/UserManager'
 import "./Instructor.css"
 
-function InstructorMusicStyle() {
+export default function InstructorMusicStyle() {
 
     const history = useHistory()
     const [userId, setUserId] = useState()
@@ -114,5 +114,3 @@ function InstructorMusicStyle() {
         </>
     )
 }
-
-export default InstructorMusicStyle

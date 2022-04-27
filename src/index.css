@@ -17,25 +17,12 @@
 
 	--ff-primary: "PT Sans", sans-serif;
 
-	--fs-h1: 2.25rem;
-	--fs-h2: 1.5rem;
-	--fs-h3: 1.25rem;
-	--fs-h4: 1.125rem;
-	--fs-body: 0.9375rem;
+	--fs-h1: 3rem;
+	--fs-h2: 2.25rem;
+	--fs-h3: 1.5rem;
+	--fs-body: 1.25rem;
 
-/*
-@media (min-width: 800px) {
-	:root {
-		--fs-h1: 3rem;
-		--fs-h2: 2.5rem;
-		--fs-h3: 1.75rem;
-		--fs-h4: 1.25;
-		--fs-body: 1rem;
-	}
-}
-*/
-
-	--fw-bold: 700;
+	--fw-bold: 800;
 	--fw-accent: 400;
 
 	--bs: 0.25em 0.25em 0.75em rgba(0,0,0,0.25),
@@ -43,6 +30,15 @@
 	
 	--bs-alt: 0 50px 100px -20px rgba(50, 50, 93, 0.25),
 			  0 30px 60px rgba(0, 0, 0, 0.3);
+
+        @media (min-width: 800px) {
+	        :root {
+        		--fs-h1: 4.5rem;
+	        	--fs-h2: 3.75rem;
+		        --fs-h3: 1.75rem;
+		        --fs-body: 1.125rem;
+        	}
+        }
 }
 
 /* reset */
@@ -72,9 +68,7 @@ h1,
 h2,
 .h2,
 h3,
-.h3,
-h4,
-.h4 {
+.h3 {
 	line-height: 1.6;
 }
 
@@ -84,8 +78,6 @@ h2,
 .h2,
 h3,
 .h3,
-h4,
-.h4,
 p {
 	margin: 0;
 }
@@ -98,9 +90,7 @@ h2,
 }
 
 h3,
-.h3,
-h4,
-.h4 {
+.h3 {
 	font-weight: var(--fw-accent);
 }
 
@@ -117,11 +107,6 @@ h2,
 h3,
 .h3 {
 	font-size: var(--fs-h3);
-}
-
-h4,
-.h4 {
-	font-size: var(--fs-h4);
 }
 
 p,
@@ -147,7 +132,6 @@ p,
 .split {
 	display: flex;
 	flex-direction: column;
-	/* gap: var(--spacer); */
 }
 
 .split > * + * {
@@ -212,6 +196,7 @@ p,
 .corner-square {
 	position: relative;
 }
+
 .corner-square:nth-of-type(2n) {
 	--accent: var(--clr-neutral-900);
 }

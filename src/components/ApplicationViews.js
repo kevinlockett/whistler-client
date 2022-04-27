@@ -15,7 +15,7 @@ import InstructorDetails from "./instructor/InstructorDetails"
 import UserProfile from "./user/UserProfile"
 import AdminList from "./admin/AdminList"
 
-export const ApplicationViews = () => {
+export default function ApplicationViews() {
 	return (
 		<>
 			<main id="container--ApplicationViews">

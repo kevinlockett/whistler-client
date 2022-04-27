@@ -10,7 +10,7 @@
 
 @media (min-width: 40em) {
     .hero {
-    padding: 0;
+        padding: 0;
     }
 }
 
@@ -109,7 +109,8 @@
 /* <-- Styles  --> */
 
 .styles .section-title {
-    margin: calc(var(--spacer) * 2) 0; 
+    margin: calc(var(--spacer) * 2) 0;
+    font-weight: var(--fw-bold);
 }
 
 .styles p {
@@ -118,6 +119,37 @@
 
 /* <-- Instrument Families --> */
 
+.families .corner-square:nth-of-type(2n) {
+	--accent: var(--clr-accent-orange);
+}
+
+.families .corner-square:nth-of-type(3n) {
+	--accent: var(--clr-accent-yellow);
+}
+
+.families .corner-square:nth-of-type(4n) {
+	--accent: var(--clr-accent-green);
+}
+
+.families .corner-square:nth-of-type(5n) {
+	--accent: var(--clr-accent-blue);
+}
+
+.families .corner-square:nth-of-type(6n) {
+	--accent: var(--clr-accent-teal);
+}
+
+.families .corner-square::before {
+	content: "";
+	display: block;
+	width: 5rem;
+	height: 5rem;
+	background: var(--accent, var(--clr-accent-red));
+	position: absolute;
+	left: -0.5em;
+	top: -0.5em;
+	z-index: -1;
+}
 
 /* <-- Call to Action --> */
 
@@ -125,6 +157,7 @@
     background-size: cover;
     background-blend-mode: multiply;
     text-align: center;
+    color: var(--clr-neutral-100);
 }
 
 .cta.bg-accent {
@@ -135,6 +168,10 @@
 }
 
 /* <-- Testimonials --> */
+
+.testimonials .section-title {
+    color: var(--clr-neutral-100);
+}
 
 .testimonials {
     --gap: 4rem;
@@ -168,6 +205,3 @@
     background-size: cover;
     background-position-x: center;
 }
-
-
-

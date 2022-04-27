@@ -5,7 +5,7 @@ import { getApprovedInstructors, getApprovedInstructorsByInstrument } from './In
 import { getInstrumentById } from '../instrument/InstrumentManager'
 import "./Instructor.css"
 
-function InstructorList() {
+export default function InstructorList() {
 
     
     const { instrumentId } = useParams()
@@ -101,5 +101,3 @@ function InstructorList() {
         </>
     )
 }
-
-export default InstructorList

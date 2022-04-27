@@ -4,7 +4,7 @@ import { getAppUser, updateAppUser } from '../user/UserManager'
 import { getInstrumentsByFamily } from '../instrument/InstrumentManager'
 import "./Student.css"
 
-function StudentInstrumentForm() {
+export default function StudentInstrumentForm() {
 
     const history = useHistory()
     const { familyId } = useParams()
@@ -133,5 +133,3 @@ function StudentInstrumentForm() {
         </>
     )
 }
-
-export default StudentInstrumentForm
