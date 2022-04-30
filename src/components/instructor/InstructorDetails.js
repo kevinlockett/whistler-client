@@ -21,7 +21,7 @@ export default function InstructorDetails() {
             <section className="instructor__details" >
                 <div className="container">
                     <div className="flow-content">
-                        <img src={`http://localhost:8000${instructor.image}`} alt='' />
+                        <img src={`https://whistler-app-api.herokuapp.com${instructor.image}`} alt='' />
                         <h2 className='instructor__details--name'>
                             {instructor.full_name}
                         </h2>

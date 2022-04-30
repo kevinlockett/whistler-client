@@ -1,5 +1,5 @@
 export const getInstructors = () => {
-	return fetch(`http://localhost:8000/api/appusers?role=2`, {
+	return fetch(`https://whistler-app-api.herokuapp.com/api/appusers?role=2`, {
 		headers: {
 			Authorization: `Token ${localStorage.getItem("whistler_token")}`,
 		},
@@ -7,7 +7,7 @@ export const getInstructors = () => {
 }
 
 export const getApprovedInstructors = () => {
-	return fetch(`http://localhost:8000/api/appusers?approved=1&role=2`, {
+	return fetch(`https://whistler-app-api.herokuapp.com/api/appusers?approved=1&role=2`, {
 		headers: {
 			Authorization: `Token ${localStorage.getItem("whistler_token")}`,
 		},
@@ -15,7 +15,7 @@ export const getApprovedInstructors = () => {
 }
 
 export const getApprovedInstructorsByInstrument = (instrumentId) => {
-	return fetch(`http://localhost:8000/api/appusers?approved=1&instrument=${instrumentId}&role=2`, {
+	return fetch(`https://whistler-app-api.herokuapp.com/api/appusers?approved=1&instrument=${instrumentId}&role=2`, {
 		headers: {
 			Authorization: `Token ${localStorage.getItem("whistler_token")}`,
 		},

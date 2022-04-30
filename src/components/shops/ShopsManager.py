@@ -1,5 +1,5 @@
 export const getShops = () => {
-	return fetch(`http://localhost:8000/api/shops`, {
+	return fetch(`https://whistler-app-api.herokuapp.com/api/shops`, {
 		headers: {
 			Authorization: `Token ${localStorage.getItem("whistler_token")}`,
 		},
