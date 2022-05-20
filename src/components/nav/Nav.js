@@ -11,7 +11,8 @@ export default function Nav() {
 		if (localStorage.getItem("whistler_id") !== null) {
 			setUserId(parseInt(localStorage.getItem("whistler_id")))
 		}
-    }, [])
+	}, [userId]
+	)
 
 	useEffect(() => {
         if (userId) {
@@ -56,20 +57,26 @@ export default function Nav() {
 							Home
 						</Link>
 					</li>
-					<li className='nav__item'>
-						<Link className='nav__link'
-							to='/instructors'
-							onClick={closeHamburgerMenu}>
-							Instructors
-						</Link>
-					</li>
-					<li className='nav__item'>
-						<Link className='nav__link'
-							to='/profile'
-							onClick={closeHamburgerMenu}>
-							Profile
-						</Link>
-					</li>
+					{localStorage.getItem("whistler_id") !== null ? (
+						<>
+							<li className='nav__item'>
+								<Link className='nav__link'
+									to='/instructors'
+									onClick={closeHamburgerMenu}>
+									Instructors
+								</Link>
+							</li>
+							<li className='nav__item'>
+								<Link className='nav__link'
+									to='/profile'
+									onClick={closeHamburgerMenu}>
+									Profile
+								</Link>
+							</li>
+						</>
+					)
+						: ""
+					}
 					{userRole === 3 ? (
 						<li className='nav__item'>
 							<Link className='nav__link'
@@ -81,7 +88,7 @@ export default function Nav() {
 					)
 					: ""
 					}
-					{ localStorage.getItem("whistler_id") !== null ? (
+					{localStorage.getItem("whistler_id") !== null ? (
 						<li className='nav__item'>
 							<Link
 								className='nav__link'
@@ -93,19 +100,23 @@ export default function Nav() {
 					) : (
 						<>
 							<li className='nav__item'>
-								<Link className='nav__link' to='/login'>
+								<Link className='nav__link'
+									to='/login'
+									onClick={closeHamburgerMenu}>
 									Login
 								</Link>
 							</li>
 							<li className='nav__item'>
-								<Link className='nav__link' to='/register'>
+								<Link className='nav__link'
+									to='/register'
+									onClick={closeHamburgerMenu}>
 									Register
 								</Link>
 							</li>
 						</>
 					)
 					}
-					</ul>
+				</ul>
 			</nav>
 		</header>
 	)
