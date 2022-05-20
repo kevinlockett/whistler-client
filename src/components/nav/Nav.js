@@ -72,7 +72,7 @@ export default function Nav() {
 					</li>
 					{userRole === 3 ? (
 						<li className='nav__item'>
-							<Link className='nav-link'
+							<Link className='nav__link'
 								to='/admin'
 								onClick={closeHamburgerMenu}>
 								Admin
@@ -81,7 +81,7 @@ export default function Nav() {
 					)
 					: ""
 					}
-					{localStorage.getItem("whistler_token") !== null ? (
+					{ localStorage.getItem("whistler_id") !== null ? (
 						<li className='nav__item'>
 							<Link
 								className='nav__link'
@@ -98,7 +98,7 @@ export default function Nav() {
 								</Link>
 							</li>
 							<li className='nav__item'>
-								<Link className='nav__ink' to='/register'>
+								<Link className='nav__link' to='/register'>
 									Register
 								</Link>
 							</li>

@@ -33,7 +33,8 @@ export default function Register() {
                 "shop_id": 1,
             }
 
-            return fetch("https://whistler-app-api.herokuapp.com/register", {
+//            return fetch("http://localhost:8000/register", {
+            return fetch("http://localhost:8000/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

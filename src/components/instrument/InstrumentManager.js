@@ -1,5 +1,5 @@
 export const getInstruments = () => {
-	return fetch(`https://whistler-app-api.herokuapp.com/api/instruments`, {
+	return fetch(`http://localhost:8000/api/instruments`, {
 		headers: {
 			Authorization: `Token ${localStorage.getItem("whistler_token")}`,
 		},
@@ -7,7 +7,7 @@ export const getInstruments = () => {
 }
 
 export const getInstrumentsByFamily = (family_id) => {
-	return fetch(`https://whistler-app-api.herokuapp.com/api/instruments?family_id=${family_id}`, {
+	return fetch(`http://localhost:8000/api/instruments?family_id=${family_id}`, {
 		headers: {
 			Authorization: `Token ${localStorage.getItem("whistler_token")}`,
 		},
@@ -15,7 +15,7 @@ export const getInstrumentsByFamily = (family_id) => {
 }
 
 export const getInstrumentById = (instrument_id) => {
-	return fetch(`https://whistler-app-api.herokuapp.com/api/instruments/${instrument_id}`, {
+	return fetch(`http://localhost:8000/api/instruments/${instrument_id}`, {
 		headers: {
 			Authorization: `Token ${localStorage.getItem("whistler_token")}`,
 		},
