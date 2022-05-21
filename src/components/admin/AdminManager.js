@@ -1,5 +1,5 @@
 export const getStaff = () => {
-	return fetch(`https://whistler-app-api.herokuapp.com/api/appusers?role=3`, {
+	return fetch(`http://localhost:8000/appusers?role=3`, {
 		headers: {
 			Authorization: `Token ${localStorage.getItem("whistler_token")}`,
 		},

@@ -202,7 +202,7 @@ export default function UserProfile() {
                                     <fieldset>
                                         <div className='form-group img--update'>
                                             <div>
-                                                <img className='profile--img' src={`https://whistler-app-api.herokuapp.com${currentAppUser.image}`} alt='' />
+                                                <img className='profile--img' src={`http://localhost:8000${currentAppUser.image}`} alt='' />
                                             </div>
                                             <div>
                                                 <label htmlFor="inputImage"> Select a new image </label>

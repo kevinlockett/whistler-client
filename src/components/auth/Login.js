@@ -1,8 +1,6 @@
 import React, { useRef } from "react"
 import { Link, useHistory } from "react-router-dom"
-
 import "./Auth.css"
-
 
 export default function Login() {
     const username = useRef()
@@ -13,7 +11,8 @@ export default function Login() {
     const handleLogin = (e) => {
         e.preventDefault()
 
-        return fetch("https://whistler-app-api.heroku.com/login", {
+//        return fetch("https://whistler-app-api.heroku.com/login", {
+        return fetch("http://localhost:8000/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -38,10 +37,10 @@ export default function Login() {
     }
 
     return (
-        <main className="container--login">
+        <main className="container--login" >
             <dialog className="dialog dialog--auth" ref={invalidDialog}>
                 <div>Username or password was not valid.</div>
-                <button className="btn--close" onClick={e => invalidDialog.current.close()}>Close</button>
+                <button className="button--close" onClick={e => invalidDialog.current.close()}>Close</button>
             </dialog>
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
@@ -49,13 +48,14 @@ export default function Login() {
                                 alt="Mr. Whistler's Musical Emporium Logo" />
                     <h2>Please sign in</h2>
                     <fieldset>
-                        <label htmlFor="inputUsername"> Username </label>
-                        <input ref={username} type="username" id="username" className="form-control" placeholder="Username" required autoFocus />
+                        <label htmlFor="inputUsername" style={{color:'black'}}> Username </label>
+                        <input ref={username} type="username" id="username" className="form-control" placeholder="Username address" required autoFocus />
                     </fieldset>
                     <fieldset>
-                        <label htmlFor="inputPassword"> Password </label>
+                        <label htmlFor="inputPassword" style={{color:'black'}}> Password </label>
                         <input ref={password} type="password" id="password" className="form-control" placeholder="Password" required />
                     </fieldset>
+                    
                     <fieldset style={{
                         textAlign: "center"
                     }}>

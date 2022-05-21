@@ -79,7 +79,7 @@ export default function AdminList() {
                                 instructors.map(instructor => {
                                     return <div className='admin-list__list-item split__admin-list' key={`instructor--${instructor.id}`}>
                                         <div className="flow-content corner-square split__admin-list-item">
-                                            <img src={`https://whistler-app-api.herokuapp.com${instructor.image}`} alt='' />
+                                            <img src={`http://localhost:8000${instructor.image}`} alt='' />
                                         </div>
                                         <div className="split__admin-list-item">
                                             <div className="flow-content admin-list__user-details">
