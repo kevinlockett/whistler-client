@@ -1,6 +1,6 @@
 import React, {useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import { getAppUser, getUserId } from "../user/UserManager"
+import { getAppUser } from "../user/UserManager"
 import "./Nav.css"
 
 export default function Nav() {

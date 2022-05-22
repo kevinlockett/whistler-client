@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { useHistory } from 'react-router-dom'
-import "../../../node_modules/video-react/dist/video-react.css"
 import "./landingPage.css"
 
 export default function Home() {
