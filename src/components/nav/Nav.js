@@ -1,6 +1,6 @@
 import React, {useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import { getAppUser } from "../user/UserManager"
+import { getAppUser, getUserId } from "../user/UserManager"
 import "./Nav.css"
 
 export default function Nav() {
@@ -23,6 +23,9 @@ export default function Nav() {
 	}, [userId])
 	
 	let toggleHamburgerMenu = () => {
+		if (localStorage.getItem("whistler_id") !== null) {
+			setUserId(parseInt(localStorage.getItem("whistler_id")))
+		}
 		document.body.classList.toggle('nav-open')
 	}
 
@@ -33,6 +36,8 @@ export default function Nav() {
 	let clearLocalStorage = () => {
 		localStorage.removeItem('whistler_id')
 		localStorage.removeItem('whistler_token')
+		setRole(0)
+		setUserId(null)
 		closeHamburgerMenu()
 	}
 	

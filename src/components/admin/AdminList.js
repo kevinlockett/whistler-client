@@ -61,9 +61,9 @@ export default function AdminList() {
     }
 
     const updateInstructorApproval = (instructor, value) => {
-        const copy = instructor
-            copy.approved = value
-            updateAppUser(copy).then(() => {
+        instructor.approved = value
+            updateAppUser(instructor).then(() => {
+                updateInstructors()
                 history.push('/admin')
             })
     }
@@ -108,7 +108,7 @@ export default function AdminList() {
                                                                 <>
                                                                     {instructor.approved === true ? (
                                                                         <button
-                                                                            className='btn__admin btn__admin--star--green'
+                                                                            className='btn__admin btn__admin--star--yellow'
                                                                             type='submit'
                                                                             onClick={(evt) => {
                                                                                 evt.preventDefault()
@@ -118,7 +118,7 @@ export default function AdminList() {
                                                                         </button>
                                                                     ) : (
                                                                         <button
-                                                                            className='btn__admin btn__admin--star--yellow'
+                                                                            className='btn__admin btn__admin--star--green'
                                                                             type='submit'    
                                                                                 onClick={(evt) => {
                                                                                     evt.preventDefault()
