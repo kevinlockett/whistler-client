@@ -57,7 +57,7 @@ export default function InstructorList() {
                                 instructorsByInstrument.map(instructor_by_id => {
                                     return <div className='instructor__list-item split__instructor' key = {`instructor--${instructor_by_id.id}`}>
                                         <div className="flow-content corner-square split__instructor-item">
-                                            <img src={`http://localhost:8000/${instructor_by_id.image}`} alt='' />
+                                            <img src={`http://localhost:8000${instructor_by_id.image}`} alt='' />
                                         </div>
                                         <div className="split__instructor-item">
                                             <div className="flow-content instructor__name">
@@ -80,7 +80,7 @@ export default function InstructorList() {
                                 instructors.map(instructor => {
                                     return <div className='instructor__list-item split__instructor' key = {`instructor--${instructor.id}`}>
                                         <div className="flow-content corner-square split__instructor-item">
-                                            <img src={`http://localhost:8000/${instructor.image}`} alt='' />
+                                            <img src={`http://localhost:8000${instructor.image}`} alt='' />
                                         </div>
                                         <div className="split__instructor-item">
                                             <div className="flow-content instructor__name">

@@ -44,7 +44,7 @@ export default function AdminList() {
         })
     }
 
-    const updateStudents = () => {
+    const updateStudent = () => {
         getStudents().then((d) => {
             setStudents(d).then(() => {
                 history.push('/admin')
@@ -74,7 +74,7 @@ export default function AdminList() {
                 <div className="container">
                     <div className="admin-list__instructors">
                         <h2 className="admin-list__header">Instructors:</h2>
-                        <div className="admin-list__instructor">
+                        <div  className="admin-list__instructor">
                             {
                                 instructors.map(instructor => {
                                     return <div className='admin-list__list-item split__admin-list' key={`instructor--${instructor.id}`}>
@@ -89,8 +89,8 @@ export default function AdminList() {
                                                 <div className="admin-list__list-items">
                                                     <ul>
                                                         <li>Instrument: {instructor.instrument ? `${instructor.instrument.name}` : ""}</li>
-                                                        <li>Preferred Style: {instructor.music_style.style} music</li>
-                                                        <li>Approved to teach up to {instructor.skill_level.level} level students</li>
+                                                        <li>Preferred Style: {instructor.music_style ? `${instructor.music_style.style} music` : ""}</li>
+                                                        <li>Approved to teach up to {instructor.skill_level ? `${instructor.skill_level.level} level students` : ""}</li>
                                                         <li className="admin-list__icon-buttons">
                                                             <button
                                                                 className='btn__admin btn__admin--trashcan'
@@ -153,6 +153,10 @@ export default function AdminList() {
                             }
                         </div>
                     </div>
+
+                    
+
+
                     <div className="admin-list__students">
                         <h2 className="admin-list__header">Students:</h2>
                         <div className='admin-list__student'>
@@ -161,49 +165,61 @@ export default function AdminList() {
                                     return <div className='admin-list__list-item split__admin-list' key={`student--${student.id}`}>
                                         <div className="split__admin-list-item">
                                             <div className="flow-content admin-list__user-details">
-                                                <Link className="admin-list__user-name" to={`/details/${student.id}`}>
+                                                <div className="admin-list__user-name">
                                                     <h3>{student.full_name}</h3>
-                                                </Link>
+                                                </div>
                                                 <div className="admin-list__list-items">
                                                     <ul>
-                                                        <li>Instrument: {student.instrument ? `${student.instrument.name}` : `No instrument yet`}</li>
-                                                        <li>Preferred Style: {student.music_style.style} music</li>
-                                                        <li>Currently assigned to {student.skill_level.level} level</li>
+                                                        <li>Instrument: {student.instrument ? `${student.instrument.name}` : `No instrument selected yet`}</li>
+                                                        <li>Preferred Style: {student.music_style ? `${student.music_style.style} music` : `No preferred style selected yet`}</li>
+                                                        <li>Currently {student.skill_level ? ` assigned to ${student.skill_level.level} level` : " not evaluated or assigned"}</li>
                                                         <li className="admin-list__icon-buttons">
-                                                            <button
-                                                                className='btn__admin btn__admin--trashcan'
-                                                                type='submit'
-                                                                onClick={(evt) => {
-                                                                    evt.preventDefault()
-                                                                    deleteAppUser(student.id).then(() => {
-                                                                        updateStudents()
-                                                                    })
-                                                                }}>
-                                                                {trashCan}
-                                                            </button>
-                                                        </li>
+                                                        <button
+                                                            className='btn__admin btn__admin--trashcan'
+                                                            type='submit'
+                                                            onClick={(evt) => {
+                                                                evt.preventDefault()
+                                                                deleteAppUser(student.id).then(() => {
+                                                                    updateStudent()
+                                                                })
+                                                            }}>
+                                                            {trashCan}
+                                                        </button>
+                                                    </li>
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <div className="flow-content admin-list__user-details">
-                                                <h3>Address:</h3>
-                                                <ul>
-                                                    <li>{student.address}</li>
-                                                    <li>{student.city}, {student.state.abbrev} {student.zipcode} </li>
-                                                </ul>
-                                                <ul>
-                                                    <li><b>Phone: </b>{student.phone} </li>
-                                                </ul>
-                                                <ul>
-                                                    <li><b>e-mail: </b>{student.email} </li>
-                                                </ul>
-                                            </div>
+
+
+
+                                            
                                         </div>
+
+                                        <div className="flow-content admin-list__user-details">
+                                        <h3>Address:</h3>
+                                        <ul>
+                                                <li>{student.address}</li>
+                                            <li>{student.city}, {student.state.abbrev} {student.zipcode}</li>
+                                        </ul>
+                                        <ul>
+                                            <li><b>Phone: </b>{student.phone} </li>
+                                        </ul>
+                                        <ul>
+                                            <li><b>e-mail: </b>{student.email} </li>
+                                        </ul>
+                                    </div>
+
+
+
                                     </div>
                                 })
                             }
                         </div>
                     </div>
+
+                    
+
+                    
                     <div className="admin-list__staff-members">
                         <h2 className="admin-list__header">Staff:</h2>
                         <div className="admin-list__staff-member">
@@ -238,23 +254,24 @@ export default function AdminList() {
                                             </div>
                                         </div>
                                         <div className="flow-content admin-list__user-details">
-                                                <h3>Address:</h3>
-                                                <ul>
-                                                    <li>{staff.address}</li>
-                                                    <li>{staff.city}, {staff.state.abbrev} {staff.zipcode} </li>
-                                                </ul>
-                                                <ul>
-                                                    <li><b>Phone: </b>{staff.phone} </li>
-                                                </ul>
-                                                <ul>
-                                                    <li><b>e-mail: </b>{staff.email} </li>
-                                                </ul>
-                                            </div>
+                                            <h3>Address:</h3>
+                                            <ul>
+                                                <li>{staff.address}</li>
+                                                <li>{staff.city}, {staff.state.abbrev} {staff.zipcode} </li>
+                                            </ul>
+                                            <ul>
+                                                <li><b>Phone: </b>{staff.phone} </li>
+                                            </ul>
+                                            <ul>
+                                                <li><b>e-mail: </b>{staff.email} </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 })
                             }
                         </div>
-                    </div>
+                </div>
+                    
                 </div> {/* <--/container --> */}
             </section>
         </>

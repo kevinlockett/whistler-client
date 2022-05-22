@@ -26,7 +26,7 @@ export const updateAppUser = (user) => {
 }
 
 export const deleteAppUser = (userId) => {
-	return fetch(`http://localhost:8000/appusers/api/${userId}`, {
+	return fetch(`http://localhost:8000/api/appusers/${userId}`, {
 		method: "DELETE",
 		headers: {
 			Authorization: `Token ${localStorage.getItem("whistler_token")}`,
