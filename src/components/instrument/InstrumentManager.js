@@ -22,3 +22,11 @@ export const getInstrumentById = (instrument_id) => {
 	}).then((response) => response.json())
 }
 
+export const getInstrumentFamilies = () => {
+	return fetch(`http://localhost:8000/api/instrumentfamilies`, {
+		headers: {
+			Authorization: `Token ${localStorage.getItem("whistler_token")}`,
+		},
+	}).then((response) => response.json())
+}
+

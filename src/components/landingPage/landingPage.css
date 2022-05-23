@@ -14,6 +14,10 @@
     }
 }
 
+.btn--login {
+    text-align: center;
+}
+
 /* <-- How It Works --> */
 
 .hiw__items {

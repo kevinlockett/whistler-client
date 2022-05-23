@@ -5,7 +5,7 @@ import "./landingPage.css"
 export default function Home() {
 
     const history = useHistory()
-    
+
     const handleClick = () => {
         if (localStorage.getItem("whistler_token")) {
             history.push('/')
@@ -43,10 +43,14 @@ export default function Home() {
                             <p className="h2 page-heading">Are you looking for one-on-one training in studio or on-line?<br/> <strong>We can get you started!</strong>
                             </p>
                             <p>Lorem ipsum dolor sit <a href="https://www.linkedin.com/in/kevin-lockett">Kevin Lockett's LinkedIn page</a> elit. Donec placerat, ipsum ac auctor ornare, nunc ligula scelerisque eros.</p>
-                            <button className='btn'
-                                onClick={() => {
-                                    handleClick()
-                                }}>Login</button>
+                            <div className="btn--login">
+                                <button className='btn'
+                                    onClick={() => {
+                                        handleClick()
+                                    }} >
+                                    Login
+                                </button>
+                            </div>
                         </div>
                         <div>
                             <img className="shadow" src={require('../assets/hero.png')}
