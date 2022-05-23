@@ -12,6 +12,7 @@ export default function InstructorList() {
     const instId = parseInt(instrumentId)
     const [instructors, setInstructors] = useState([])
     const [instructorsByInstrument, setInstructorsByInstrument] = useState([])
+    const [otherInstructors, setOtherInstructors] = useState([])
     const [instrument, setInstrument] = useState([])
 
     useEffect(() => {
@@ -33,6 +34,12 @@ export default function InstructorList() {
     }, [instId])
 
     useEffect(() => {
+        const filteredInstructors = instructors
+            .filter(instructor => instructor.instrument_id !== instId)
+            setOtherInstructors(filteredInstructors)
+    }, [instId, instructors])
+
+    useEffect(() => {
         if (instId) {
             getInstrumentById(instId).then((d) => {
                 setInstrument(d)
@@ -46,11 +53,16 @@ export default function InstructorList() {
                 <div className="container">
                     <div className="instructors">
                         {
-                            instructorsByInstrument.length === 0 ? (
-                                <h2 className="instructor-list--header">Sorry, we do not have any {instrument.name} instructors yet.</h2>
-                            ) : (
-                                    <h2 className="instructor-list--header">Here are the {instrument.name} instructors:</h2>
-                            )
+                            instId ? 
+                                (
+                                    instructorsByInstrument.length === 0 ? (
+                                        <h2 className="instructor-list--header">Sorry, we do not have any {instrument.name} instructors yet.</h2>
+                                    ) : (
+                                        <h2 className="instructor-list--header">Here are our {instrument.name} instructors:</h2>
+                                    )
+                                ) : (
+                                    <h2 className="instructor-list--header">Here are all of our approved instructors:</h2>
+                                )
                         }
                         <div >
                             {
@@ -73,28 +85,51 @@ export default function InstructorList() {
                             }
                         </div>
                     </div>
+
+
+
+
+
+
+
+
+                    
+
+
+
+
+
+
+
+
                     <div className="instructors">
-                        <h2 className="instructor-list--header">Here are our other instructors:</h2>
-                        <div >
-                            {
-                                instructors.map(instructor => {
-                                    return <div className='instructor__list-item split__instructor' key = {`instructor--${instructor.id}`}>
-                                        <div className="flow-content corner-square split__instructor-item">
-                                            <img src={`http://localhost:8000${instructor.image}`} alt='' />
-                                        </div>
-                                        <div className="split__instructor-item">
-                                            <div className="flow-content instructor__name">
-                                                <Link to={`/details/${instructor.id}`}>
-                                                    <h3>{instructor.full_name}</h3>
-                                                </Link>
-                                                <p>{instructor.first_name} plays {instructor.instrument.name}, prefers {instructor.music_style.style}, and likes to work with  {instructor.skill_level.level} students.</p>
-                                                <p>You can reach {instructor.first_name} at {instructor.phone}.</p>
-                                            </div>
-                                        </div>
+                        {
+                            instId ? (
+                                <>
+                                    <h2 className="instructor-list--header">Here are our other instructors:</h2>
+                                    <div >
+                                        {
+                                            otherInstructors.map(instructor => {
+                                                return <div className='instructor__list-item split__instructor' key = {`instructor--${instructor.id}`}>
+                                                    <div className="flow-content corner-square split__instructor-item">
+                                                        <img src={`http://localhost:8000${instructor.image}`} alt='' />
+                                                    </div>
+                                                    <div className="split__instructor-item">
+                                                        <div className="flow-content instructor__name">
+                                                            <Link to={`/details/${instructor.id}`}>
+                                                                <h3>{instructor.full_name}</h3>
+                                                            </Link>
+                                                            <p>{instructor.first_name} plays {instructor.instrument.name}, prefers {instructor.music_style.style}, and likes to work with  {instructor.skill_level.level} students.</p>
+                                                            <p>You can reach {instructor.first_name} at {instructor.phone}.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            })
+                                        }
                                     </div>
-                                })
-                            }
-                        </div>
+                                </>
+                            ) : ""
+                        }
                     </div>
                 </div> {/* <--/container --> */}
             </section>
